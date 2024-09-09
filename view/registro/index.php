@@ -42,45 +42,48 @@
                                             <h5 class="mb-0">Registrar Cuenta</h5>
                                             <p class="text-muted mt-2">Registre sus datos en el portal</p>
                                         </div>
-                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
+                                        <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
+
                                             <div class="mb-3">
-                                                <label for="useremail" class="form-label">Correo Electrónico</label>
-                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su Correo Electrónico" required="">  
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese su Correo Electrónico
-                                                </div>      
+
+                                                <label for="usu_correo" class="form-label">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese su Correo Electrónico" required="">  
+                                                <div class="validation-error text-danger"></div>  
+
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">Nombres y Apellidos</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Ingrese sus Nombres y Apellidos" required="">
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese sus Nombres y Apellidos
-                                                </div>  
+
+                                                <label for="usu_nomape" class="form-label">Nombres y Apellidos</label>
+                                                <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingrese sus Nombres y Apellidos" required="">
+                                                <div class="validation-error text-danger"></div> 
+                                                
                                             </div>
                     
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Ingrese su Contraseña" required="">
-                                                <div class="invalid-feedback">
-                                                    Por favor ingrese su Contraseña
-                                                </div>       
+
+                                                <label for="usu_pass" class="form-label">Contraseña</label>
+                                                <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese su Contraseña" required="">
+                                                <div class="validation-error text-danger"></div> 
+                                                
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="userpassword2" placeholder="Confirme su Contraseña" required="">
-                                                <div class="invalid-feedback">
-                                                    Por favor confirme su Contraseña
-                                                </div>       
+
+                                                <label for="usu_pass_confir" class="form-label">Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="usu_pass_confir" name="usu_pass_confir" placeholder="Confirme su Contraseña" required="">
+                                                <div class="validation-error text-danger"></div> 
+                                                      
                                             </div>
 
                                             <div class="mb-4">
                                                 <p class="mb-0">Al registrarse acepta los <a href="#" class="text-primary"><strong>Términos y Condiciones</strong></a></p>
                                             </div>
+
                                             <div class="mb-3">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Registrarse</button>
                                             </div>
+
                                         </form>
 
                                         <!-- <div class="mt-4 pt-2 text-center">
@@ -236,7 +239,8 @@
         <script src="../../assets/js/pace.min.js"></script>
 
         <!-- validation init -->
-        <script src="../../assets/js/validation.init.js"></script>
+        <!-- <script src="../../assets/js/validation.init.js"></script> -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
 
         <script type="text/javascript" src="registro.js"></script>
 
