@@ -69,7 +69,7 @@
 
                                             <div class="mb-3">
                                                 <label for="userpassword" class="form-label">Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Confirme su Contraseña" required="">
+                                                <input type="password" class="form-control" id="userpassword2" placeholder="Confirme su Contraseña" required="">
                                                 <div class="invalid-feedback">
                                                     Por favor confirme su Contraseña
                                                 </div>       
@@ -237,6 +237,8 @@
 
         <!-- validation init -->
         <script src="../../assets/js/validation.init.js"></script>
+
+        <script type="text/javascript" src="registro.js"></script>
 
     </body>
 
