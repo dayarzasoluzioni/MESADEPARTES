@@ -12,7 +12,14 @@
         /* TODO: Si la operación es Registrar */
         case "registrar":
             /* TODO: Llama al método registrar_usuario de la instancia $usuario con los datos del formulario */
-            $usuario->registrar_usuario($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["usu_pass"]);
+            $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
+            if(is_array($datos) == true and count($datos) == 0){
+                $usuario->registrar_usuario($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["usu_pass"]);
+                echo "1";
+            }else{
+                echo "0";
+            }
+            
             break;
 
     }

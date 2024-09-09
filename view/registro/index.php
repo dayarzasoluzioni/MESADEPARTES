@@ -10,6 +10,9 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
 
+        <!-- Sweet Alert-->
+        <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
         <!-- preloader css -->
         <link rel="stylesheet" href="../../assets/css/preloader.min.css" type="text/css">
 
@@ -238,8 +241,10 @@
         <!-- pace js -->
         <script src="../../assets/js/pace.min.js"></script>
 
-        <!-- validation init -->
-        <!-- <script src="../../assets/js/validation.init.js"></script> -->
+        <!-- Sweet Alerts js -->
+        <script src="../../assets/js/sweetalert2.min.js"></script>
+
+        <!-- validator JS -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
 
         <script type="text/javascript" src="registro.js"></script>

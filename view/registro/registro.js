@@ -101,7 +101,44 @@ function registrar(){
         contentType: false,
         processData: false,
         success: function(datos){
-            console.log("Guardado" + datos);
+            if(datos == 1){
+                Swal.fire({
+                    title: "Registro",
+                    text: "Se registró correctamente. Por favor inicia sesión. Redireccionando en 5 segundos",
+                    icon: "success",
+                    confirmButtonColor: "#5156be",
+                    /* --------------------------------- */
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: function(){
+                        Swal.showLoading();
+                        timerIntervaler = setInterval(function(){
+                            var content = Swal.getHtmlContainer();
+                            if(!content) return;
+                            var countdownElement = content.querySelector("b");
+                            if(countdownElement){
+                                countdownElement.textContent = (Swal.getTimerLeft() / 1000).toFixed();
+                            }
+                        }, 100);
+                    },
+                    didClose: function(){
+                        clearInterval(timerIntervaler);
+                        window.location.href = "../../index.php";
+                    }
+                  }).then(function(result){
+                        if(result.dismiss === Swal.DismissReason.timer){
+                            /* console.log("Timer cerrado"); */
+                        }                        
+                  });
+            }else if(datos == 0){
+                Swal.fire({
+                    title: "Registro",
+                    text: "El correo electrónico ya se encuentra registrado",
+                    icon: "error",
+                    confirmButtonColor: "#5156be",
+                  });
+            }
+            /* console.log(datos); */
         }
     });
 
