@@ -1,3 +1,16 @@
+<?php
+
+    require_once("config/conexion.php");
+
+    if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
+
+        require_once("models/Usuario.php");
+        $usuario = new Usuario();
+        $usuario->login();
+
+    }
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -41,10 +54,66 @@
                                             <h5 class="mb-0">Bienvenido a la Mesa de Partes</h5>
                                             <p class="text-muted mt-2">Ingresa tus datos para identificarte</p>
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+
+                                        <form class="custom-form mt-4 pt-2" action="" method="post">
+
+                                            <?php
+
+                                                if(isset($_GET["m"])){
+
+                                                    switch($_GET["m"]){
+
+                                                        case "1":
+
+                                                            ?>
+
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-2"></i>
+                                                                Correo Electrónico no registrado
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <?php
+
+                                                            break;
+
+                                                        case "2":
+
+                                                            ?>
+
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-2"></i>
+                                                                Los campos no pueden estar vacios
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <?php
+
+                                                            break;
+
+                                                        case "3":
+
+                                                            ?>
+
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-2"></i>
+                                                                Contraseña Incorrecta
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <?php
+
+                                                            break;
+
+                                                    }
+
+                                                }
+
+                                            ?>
+
                                             <div class="mb-3">
                                                 <label class="form-label">Correo Electronico</label>
-                                                <input type="email" class="form-control" id="usu_correo" placeholder="Ingrese su Correo Electronico">
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese su Correo Electronico">
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-start">
@@ -53,13 +122,13 @@
                                                     </div>
                                                     <div class="flex-shrink-0">
                                                         <div class="">
-                                                            <a href="auth-recoverpw-1.html" class="text-muted">¿Olvidaste tu contraseña?</a>
+                                                            <a href="view/recuperar/index.php" class="text-muted">¿Olvidaste tu contraseña?</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" placeholder="Ingrese su Contraseña" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese su Contraseña" aria-label="Password" aria-describedby="password-addon">
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
@@ -75,6 +144,7 @@
                                                 
                                             </div>
                                             <div class="mb-3">
+                                                <input type="hidden" name="enviar" value="si">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Acceder</button>
                                             </div>
                                         </form>

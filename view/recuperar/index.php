@@ -4,10 +4,13 @@
     <head>
 
         <meta charset="utf-8">
-        <title>Confirmar Correo Electrónico | Soluzioni Group - Mesa de Partes</title>
+        <title>Recuperar Contraseña | Soluzioni Group - Mesa de Partes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
+
+        <!-- Sweet Alert-->
+        <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
         <!-- preloader css -->
         <link rel="stylesheet" href="../../assets/css/preloader.min.css" type="text/css">
@@ -32,24 +35,30 @@
                             <div class="w-100">
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
-                                        <a href="index.html" class="d-block auth-logo">
+                                        <a href="index-1.html" class="d-block auth-logo">
                                             <img src="../../assets/image/soluzionilogo.png" alt="" height="28"> <span class="logo-txt">Soluzioni Group</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
-                                            <div class="avatar-lg mx-auto">
-                                                <div class="avatar-title rounded-circle bg-light">
-                                                    <i class="bx bx-mail-send h2 mb-0 text-primary"></i>
-                                                </div>
+                                            <h5 class="mb-0">Recuperar Contraseña</h5>
+                                            <p class="text-muted mt-2">Recuperar Contraseña Mesa de Partes</p>
+                                        </div>
+                                        <div class="alert alert-success text-center mb-4 mt-4 pt-2" role="alert">
+                                            Ingrese su correo electrónico y siga las instrucciones
+                                        </div>
+                                        <form class="custom-form mt-4">
+                                            <div class="mb-3">
+                                                <label class="form-label">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electrónico">
                                             </div>
-                                            <div class="p-2 mt-4">
-                                                <h4>Gracias por Confirmar !</h4>
-                                                <p class="text-muted">Su cuenta ha sido validada, ya puede ingresar al sistema de Mesa de Partes.</p>
-                                                <div class="mt-4">
-                                                    <a href="../../index.php" class="btn btn-primary w-100">Regresar al Login</a>
-                                                </div>
+                                            <div class="mb-3 mt-4">
+                                                <a class="btn btn-primary w-100 waves-effect waves-light" id="btnrecuperar">Recuperar</a>
                                             </div>
+                                        </form>
+
+                                        <div class="mt-5 text-center">
+                                            <p class="text-muted mb-0"> ¿Recordaste tu contraseña?  <a href="../../index.php" class="text-primary fw-semibold"> Acceder </a> </p>
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
@@ -80,7 +89,10 @@
         <!-- pace js -->
         <script src="../../assets/js/pace.min.js"></script>
 
-        <script type="text/javascript" src="confirmar.js"></script>
+        <!-- Sweet Alerts js -->
+        <script src="../../assets/js/sweetalert2.min.js"></script>
+
+        <script type="text/javascript" src="recuperar.js"></script>
 
     </body>
 
