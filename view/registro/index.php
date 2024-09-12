@@ -32,7 +32,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-xxl-3 col-lg-4 col-md-5">
-                        <div class="auth-full-page-content d-flex p-sm-5 p-4">
+                        <div class="auth-full-page-content d-flex p-sm-5 p-4" style="padding: 2rem!important;">
                             <div class="w-100">
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
@@ -43,7 +43,7 @@
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Registrar Cuenta</h5>
-                                            <p class="text-muted mt-2">Registre sus datos en el portal</p>
+                                            <p class="text-muted mt-2" style="margin-bottom: -1rem !important">Registre sus datos en el portal</p>
                                         </div>
                                         <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
 
@@ -89,31 +89,38 @@
 
                                         </form>
 
-                                        <!-- <div class="mt-4 pt-2 text-center">
+                                        <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
-                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign up using -</h5>
+                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
 
                                             <ul class="list-inline mb-0">
                                                 <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
-                                                        <i class="mdi mdi-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
-                                                        <i class="mdi mdi-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
-                                                        <i class="mdi mdi-google"></i>
-                                                    </a>
+                                                    <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                                                    <div id="g_id_onload"
+                                                        data-client_id = "995852774376-e1p01bkbqmqho6t3a7d456ou3ofnuak0.apps.googleusercontent.com"
+                                                        data-context = "signin"
+                                                        data-ux_mode = "popup"
+                                                        data-callback = "handleCredentialResponse"
+                                                        data-auto_promp = "false"
+                                                    >
+                                                    </div>
+
+                                                    <!--TODO: Congiguración del btón de inicio de sesión con Google -->
+                                                    <div class = "g_id_signin"
+                                                        data-type = "standard"
+                                                        data-shape = "rectangular"
+                                                        data-theme = "outline"
+                                                        data-text = "signin_with"
+                                                        data-size = "large"
+                                                        data-logo_alignment = "left"
+                                                    >
+                                                    </div>
                                                 </li>
                                             </ul>
-                                        </div> -->
+                                        </div>
 
-                                        <div class="mt-5 text-center">
+                                        <div class="mt-5 text-center" style="margin-top: 0rem !important">
                                             <p class="text-muted mb-0">¿ Ya tienes una cuenta ? <a href="../../index.php" class="text-primary fw-semibold"> Acceder </a> </p>
                                         </div>
                                     </div>
@@ -150,6 +157,9 @@
 
         <!-- validator JS -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+
+         <!--TODO: Script para cargar la API de Google Sign-In de manera asincrona -->
+        <script src="https://accounts.google.com/gsi/client" async></script>
 
         <script type="text/javascript" src="registro.js"></script>
 

@@ -70,7 +70,7 @@
         }
 
         /* TODO: Método para registrar un nuevo usuario en la base de datos */
-        public function registrar_usuario($usu_nomape, $usu_correo, $usu_pass){
+        public function registrar_usuario($usu_nomape, $usu_correo, $usu_pass, $usu_img, $est){
 
             $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
             $cifrado = openssl_encrypt($usu_pass, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
@@ -81,8 +81,8 @@
             /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
             parent::set_names();
             /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-            $sql="INSERT INTO tm_usuario (usu_nomape, usu_correo, usu_pass) 
-                VALUES (?,?,?)";
+            $sql="INSERT INTO tm_usuario (usu_nomape, usu_correo, usu_pass, usu_img, est) 
+                VALUES (?,?,?,?,?)";
 
             /* TODO: Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);
@@ -90,6 +90,8 @@
             $sql->bindValue(1,$usu_nomape);
             $sql->bindValue(2,$usu_correo);
             $sql->bindValue(3,$textoCifrado);
+            $sql->bindValue(4,$usu_img);
+            $sql->bindValue(5,$est);
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
 

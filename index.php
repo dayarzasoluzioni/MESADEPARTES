@@ -149,13 +149,13 @@
                                             </div>
                                         </form>
 
-                                        <!-- <div class="mt-4 pt-2 text-center">
+                                        <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
 
                                             <ul class="list-inline mb-0">
-                                                <li class="list-inline-item">
+                                                <!-- <li class="list-inline-item">
                                                     <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
                                                         <i class="mdi mdi-facebook"></i>
                                                     </a>
@@ -164,14 +164,37 @@
                                                     <a href="javascript:void()" class="social-list-item bg-info text-white border-info">
                                                         <i class="mdi mdi-twitter"></i>
                                                     </a>
-                                                </li>
+                                                </li> -->
                                                 <li class="list-inline-item">
-                                                    <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
+
+                                                    <!-- <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
                                                         <i class="mdi mdi-google"></i>
-                                                    </a>
+                                                    </a> -->
+
+                                                    <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                                                    <div id="g_id_onload"
+                                                        data-client_id = "995852774376-e1p01bkbqmqho6t3a7d456ou3ofnuak0.apps.googleusercontent.com"
+                                                        data-context = "signin"
+                                                        data-ux_mode = "popup"
+                                                        data-callback = "handleCredentialResponse"
+                                                        data-auto_promp = "false"
+                                                    >
+                                                    </div>
+
+                                                    <!--TODO: Congiguración del btón de inicio de sesión con Google -->
+                                                    <div class = "g_id_signin"
+                                                        data-type = "standard"
+                                                        data-shape = "rectangular"
+                                                        data-theme = "outline"
+                                                        data-text = "signin_with"
+                                                        data-size = "large"
+                                                        data-logo_alignment = "left"
+                                                    >
+                                                    </div>
+
                                                 </li>
                                             </ul>
-                                        </div> -->
+                                        </div> 
 
                                         <div class="mt-5 text-center">
                                             <p class="text-muted mb-0">¿Aún no tienes cuenta? <a href="view/registro/" class="text-primary fw-semibold"> Registrate </a> </p>
@@ -302,6 +325,10 @@
         <script src="assets/js/pace.min-1.js"></script>
         <!-- password addon init -->
         <script src="assets/js/pass-addon.init-1.js"></script>
+        <!--TODO: Script para cargar la API de Google Sign-In de manera asincrona -->
+        <script src="https://accounts.google.com/gsi/client" async></script>
+
+        <script type="text/javascript" src="acceso.js"></script>
 
     </body>
 
