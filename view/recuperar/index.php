@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8">
-        <title>Recuperar Contraseña | Soluzioni Group - Mesa de Partes</title>
+        <title>Recuperar Contraseña | Soluzioni Capital - Mesa de Partes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
@@ -36,7 +36,7 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="../../assets/image/soluzionilogo.png" alt="" height="28"> <span class="logo-txt">Soluzioni Group</span>
+                                            <img src="../../assets/image/soluzionilogo.png" alt="" height="28"> <span class="logo-txt">Soluzioni Capital</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
@@ -62,7 +62,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Soluzioni Group <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Soluzioni Capital <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
                                     </div>
                                 </div>
                             </div>

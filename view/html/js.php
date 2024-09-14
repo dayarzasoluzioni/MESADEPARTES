@@ -5,6 +5,14 @@
 <script src="../../assets/js/simplebar.min.js"></script>
 <script src="../../assets/js/waves.min.js"></script>
 <script src="../../assets/js/feather.min.js"></script>
+
 <!-- pace js -->
 <script src="../../assets/js/pace.min.js"></script>
+
+<!-- choices js -->
+<script src="../../assets/js/choices.min.js"></script>
+
+<!-- dropzone js -->
+<script src="../../assets/js/dropzone.min.js"></script>
+
 <script src="../../assets/js/app.js"></script>

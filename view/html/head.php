@@ -2,6 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
 <meta content="Themesbrand" name="author">
+
+<!-- dropzone css -->
+<link href="../../assets/css/dropzone.min.css" rel="stylesheet" type="text/css">
+<!-- choices css -->
+<link href="../../assets/css/choices.min.css" rel="stylesheet" type="text/css">
 <!-- preloader css -->
 <link rel="stylesheet" href="../../assets/css/preloader.min.css" type="text/css">
 <!-- Bootstrap Css -->

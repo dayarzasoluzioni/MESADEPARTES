@@ -16,7 +16,7 @@
             /* TODO: Llama al método registrar_usuario de la instancia $usuario con los datos del formulario */
             $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
             if(is_array($datos) == true and count($datos) == 0){
-                $datos1 = $usuario->registrar_usuario($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["usu_pass"], "", 2);
+                $datos1 = $usuario->registrar_usuario($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["usu_pass"], "../../assets/picture/avatar.png", 2);
                 $email->registrar($datos1[0]["usu_id"]);
                 echo "1";
             }else{
@@ -68,6 +68,7 @@
                         $_SESSION["usu_id"] = $datos1[0]["usu_id"];
                         $_SESSION["usu_nomape"] = $nombre;                        
                         $_SESSION["usu_correo"] = $email;
+                        $_SESSION["usu_img"] = $imagen;
 
                         echo "1";
 
@@ -79,6 +80,7 @@
                         $_SESSION["usu_id"] = $usu_id;
                         $_SESSION["usu_nomape"] = $nombre;                        
                         $_SESSION["usu_correo"] = $email;
+                        $_SESSION["usu_img"] = $imagen;
 
                         echo "0";
 
