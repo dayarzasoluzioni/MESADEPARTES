@@ -1,13 +1,21 @@
 $(document).ready(function() {
-    
-});
 
-/* document.addEventListener('DOMContentLoaded', function(){
+    $.post("../../controller/area.php?op=combo", function(data){
 
-    var mySelect = new Choices('#area_id', {
-
-        searchEnabled: false
+        $('#area_id').html(data);
 
     });
 
-}); */
+    $.post("../../controller/tramite.php?op=combo", function(data){
+
+        $('#tra_id').html(data);
+
+    });
+
+    $.post("../../controller/tipo.php?op=combo", function(data){
+
+        $('#tip_id').html(data);
+
+    });
+    
+});

@@ -52,84 +52,86 @@
                                         </div>
 
                                         <div class="card-body">
-                                            <div class="row">
+                                        <form method="post" id="documento_form">
+                                            <div class="row">                                                
 
-                                            <div class="col-lg-3">
-                                                <div class="mb-3">
-                                                    <label for="form-label" class="form-label">Área (*)</label>
-                                                    <select class="form-select" name="area_id" id="area_id" placeholder="Seleccione el área">
-                                                        <option value="" disabled selected>Seleccionar</option>
-                                                        <option value="Choice 1">Choice 1</option>
-                                                        <option value="Choice 2">Choice 2</option>
-                                                        <option value="Choice 3">Choice 3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-9">
-                                                <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">Trámite (*)</label>
-                                                    <select class="form-select" name="tra_id" id="tra_id" placeholder="Seleccione el trámite">
-                                                        <option value="" disabled selected>Seleccionar</option>
-                                                        <option value="Choice 1">Choice 1</option>
-                                                        <option value="Choice 2">Choice 2</option>
-                                                        <option value="Choice 3">Choice 3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3">
-                                                <div class="mb-3">
-                                                    <label for="form-label" class="form-label">Tipo (*)</label>
-                                                    <select class="form-select" name="tip_id" id="tip_id" placeholder="Seleccione el tipo">
-                                                        <option value="" disabled selected>Seleccionar</option>
-                                                        <option value="Choice 1">Natural</option>
-                                                        <option value="Choice 2">Jurídica</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-3">
-                                                <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">DNI / RUC (*)</label>
-                                                    <input class="form-control" type="number" value="" id="example-text-input" placeholder="Ingrese el número de documento">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">Nombre / Razón Social (*)</label>
-                                                    <input class="form-control" type="text" value="" id="example-text-input" placeholder="Ingrese el nombre o razón social">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg12">
-                                                <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">Descripción (*)</label>
-                                                    <textarea class="form-control" type="text" rows="2" value="" id="example-text-input" placeholder="Ingrese una descripción"></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <form action="#" class="dropzone">
-                                                    <div class="fallback">
-                                                        <input name="file" type="file" multiple="multiple">
-                                                    </div>
-                                                    <div class="dz-message needsclick">
+                                                    <div class="col-lg-3">
                                                         <div class="mb-3">
-                                                            <i class="display-4 text-muted bx bx-cloud-upload"></i>
+                                                            <label for="form-label" class="form-label">Área (*)</label>
+                                                            <select class="form-select" name="area_id" id="area_id" placeholder="Seleccione el área" required>
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                            </select>
                                                         </div>
-        
-                                                        <h5>Drop files here or click to upload.</h5>
                                                     </div>
-                                                </form>
-                                            </div>
-                                            <div class="d-flex flex-wrap gap-2 mt-4 text-center">
-                                                <button type="button" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
-                                                <button type="button" class="btn btn-primary waves-effect waves-light">Guardar</button>
-                                            </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">Trámite (*)</label>
+                                                            <select class="form-select" name="tra_id" id="tra_id" placeholder="Seleccione el trámite" required>
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">Nro. Externo</label>
+                                                            <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" placeholder="Ingrese el número externo">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <div class="mb-3">
+                                                            <label for="form-label" class="form-label">Tipo (*)</label>
+                                                            <select class="form-select" name="tip_id" id="tip_id" placeholder="Seleccione el tipo" required>
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">DNI / RUC (*)</label>
+                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">Nombre / Razón Social (*)</label>
+                                                            <input class="form-control" type="text" value="" id="doc_nom" name="doc_nom" placeholder="Ingrese el nombre o razón social" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg12">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">Descripción (*)</label>
+                                                            <textarea class="form-control" type="text" rows="2" value="" id="doc_descrip" name="doc_descrip" placeholder="Ingrese una descripción" required></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <!-- <form action="#" class="dropzone"> -->
+                                                            <div class="fallback">
+                                                                <input name="file" type="file" multiple="multiple">
+                                                            </div>
+                                                            <div class="dz-message needsclick">
+                                                                <div class="mb-3">
+                                                                    <i class="display-4 text-muted bx bx-cloud-upload"></i>
+                                                                </div>
+                
+                                                                <h5>Suelte los archivos aqui o de clic para cargarlos.</h5>
+                                                            </div>
+                                                        <!-- </form> -->
+                                                    </div>
+                                                    
+                                                    <div class="d-flex flex-wrap gap-2 mt-4 text-center">
+                                                        <button type="button" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
+                                                        <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                                                    </div>                                                
                                             
                                             </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
