@@ -52,8 +52,8 @@
                                         </div>
 
                                         <div class="card-body">
-                                        <form method="post" id="documento_form">
-                                            <div class="row">                                                
+                                            <form method="post" id="documento_form">
+                                                <div class="row">                                                
 
                                                     <div class="col-lg-3">
                                                         <div class="mb-3">
@@ -112,7 +112,7 @@
 
                                                     <div class="col-lg-12">
                                                         <!-- <form action="#" class="dropzone"> -->
-                                                            <div class="fallback">
+                                                            <!-- <div class="fallback">
                                                                 <input name="file" type="file" multiple="multiple">
                                                             </div>
                                                             <div class="dz-message needsclick">
@@ -121,8 +121,29 @@
                                                                 </div>
                 
                                                                 <h5>Suelte los archivos aqui o de clic para cargarlos.</h5>
-                                                            </div>
+                                                            </div> -->
                                                         <!-- </form> -->
+
+                                                        <div class="dropzone">
+
+                                                            <div class="dz-default dz-message">
+
+                                                                <button class="dz-button" type="button">
+
+                                                                    <img src="../../assets/image/upload.png" alt="">
+
+                                                                </button>
+
+                                                                <div class="dz-message" data-dz-message>
+
+                                                                    <h5>Suelte los archivos aqui o de clic para cargarlos.</h5>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
                                                     </div>
                                                     
                                                     <div class="d-flex flex-wrap gap-2 mt-4 text-center">
@@ -130,8 +151,8 @@
                                                         <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
                                                     </div>                                                
                                             
-                                            </div>
-                                        </form>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

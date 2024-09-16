@@ -11,7 +11,7 @@
             parent::set_names();
             /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_documento */
             $sql="INSERT INTO tm_documento 
-                (area_id, tra_id, doc_externo, tip_id, doc_dni, doc_descrip, usu_id) 
+                (area_id, tra_id, doc_externo, tip_id, doc_dni, doc_nom, doc_descrip, usu_id) 
                 VALUES 
                 (?,?,?,?,?,?,?,?)";
 
@@ -34,7 +34,7 @@
             $sql1=$conectar->prepare($sql1);
             $sql1->execute();
 
-            return $sql1->fetchAll();
+            return $sql1->fetchAll(pdo::FETCH_ASSOC);
 
         }
 

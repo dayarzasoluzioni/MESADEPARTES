@@ -15,4 +15,7 @@
 <!-- dropzone js -->
 <script src="../../assets/js/dropzone.min.js"></script>
 
+<!-- Sweet Alerts js -->
+<script src="../../assets/js/sweetalert2.min.js"></script>
+
 <script src="../../assets/js/app.js"></script>

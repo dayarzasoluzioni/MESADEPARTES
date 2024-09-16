@@ -22,11 +22,11 @@
                 $_POST["doc_dni"], 
                 $_POST["doc_nom"],
                 $_POST["doc_descrip"], 
-                $_POST["usu_id"]
-            );
+                $_SESSION["usu_id"]
+            );            
 
             if(is_array($datos) == true and count($datos) == 0){                
-                echo $datos[0]["doc_id"];
+                echo json_encode($datos);
             }else{
                 echo "0";
             }

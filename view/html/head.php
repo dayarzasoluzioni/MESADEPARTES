@@ -3,6 +3,8 @@
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
 <meta content="Themesbrand" name="author">
 
+<!-- Sweet Alert-->
+<link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 <!-- dropzone css -->
 <link href="../../assets/css/dropzone.min.css" rel="stylesheet" type="text/css">
 <!-- choices css -->
