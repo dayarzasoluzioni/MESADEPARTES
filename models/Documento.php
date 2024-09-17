@@ -82,6 +82,26 @@
 
         }
 
+        public function get_documento_x_usu($usu_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla td_documento_detalle */
+            $sql="CALL sp_l_documento_02(?);";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_id);
+
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+            return $sql->fetchAll(pdo::FETCH_ASSOC);
+
+        }
+
     }
 
 ?>

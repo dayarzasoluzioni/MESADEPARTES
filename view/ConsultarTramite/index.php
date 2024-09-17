@@ -42,6 +42,40 @@
 
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Listado de Trámites.</h4>
+                                            <p class="card-title-desc">(*) Datos obligatorios. </p>
+                                        </div>
+
+                                        <div class="card-body">
+
+                                                <table id="listado_table" class="table table-bordered dt-responsive  nowrap w-100">
+
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Office</th>
+                                                            <th>Age</th>
+                                                            <th>Start date</th>
+                                                            <th>Salary</th>
+                                                        </tr>
+                                                    </thead>
+                                        
+                                                    <tbody>
+                                                    </tbody>
+
+                                                </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         
                     </div>
@@ -59,6 +93,8 @@
         <div class="rightbar-overlay"></div>
 
         <?php require_once("../html/js.php") ?>
+
+        <script type="text/javascript" src="consultartramite.js"></script>
 
     </body>
 </html>

@@ -3,6 +3,11 @@
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
 <meta content="Themesbrand" name="author">
 
+<!-- DataTables -->
+<link href="../../assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+<!-- Responsive datatable examples -->
+<link href="../../assets/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css"> 
 <!-- Sweet Alert-->
 <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 <!-- dropzone css -->

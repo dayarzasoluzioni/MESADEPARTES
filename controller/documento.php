@@ -30,8 +30,6 @@
                 echo "0";
 
             }else{
-
-                
                 
                 $mes = date("m");
                 $anio = date("Y");
@@ -66,6 +64,18 @@
 
             }
             
+            break;
+
+        /* TODO: Listado de usuario segun formato json para el datatable */
+        case "listarusuario":
+
+            $datos = $documento->get_documento_x_usu($_SESSION["usu_id"]);
+            $data = Array();
+            foreach($datos as $row){
+                $sub_array = array();
+                $sub_array[] = $row["nrotramite"];
+            }
+
             break;
 
     }
