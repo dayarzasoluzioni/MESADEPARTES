@@ -26,80 +26,46 @@
             );            
 
             if(is_array($datos) == true and count($datos) == 0){                
-                echo json_encode($datos);
-            }else{
+                
                 echo "0";
+
+            }else{
+
+                
+                
+                $mes = date("m");
+                $anio = date("Y");
+
+                echo $mes ."-". $anio . "-" . $datos[0]["doc_id"];
+
+                if(empty($_FILES['file']['name'])){
+
+                }else{
+                    $countfiles = count($_FILES['file']['name']);
+                    $ruta = "../assets/document/".$datos[0]["doc_id"]."/";
+                    $file_arr = array();
+
+                    if(!file_exists($ruta)){
+                        mkdir($ruta, 0777, true);
+                    }
+
+                    for($index = 0; $index < $countfiles; $index++){
+
+                        $nombre = $_FILES['file']['tmp_name'][$index];
+                        $destino = $ruta.$_FILES['file']['name'][$index];
+
+                        $documento->insert_documento_detalle($datos[0]["doc_id"], $_FILES['file']['name'][$index], $_SESSION["usu_id"]);
+
+                        move_uploaded_file($nombre, $destino);
+
+                    }
+
+                    /* TODO: Enviar Alerta por Email */
+                    $email->enviar_registro($datos[0]["doc_id"]);
+                }
+
             }
             
-            break;
-
-        
-
-            if($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER["CONTENT_TYPE"] === "application/json"){
-                /* TODO: Recuperar el JSON del cuerpo POST */
-                $jsonStr = file_get_contents('php://input');
-                $jsonObj = json_decode($jsonStr);
-
-                if(!empty($jsonObj->request_type) && $jsonObj->request_type == 'user_auth'){
-
-                    $credential = !empty($jsonObj->credential) ? $jsonObj->credential : '';
-
-                    /* TODO: Decodificar el payload de la respuesta desde el token JWT */
-                    $parts = explode(".", $credential);
-                    $header = base64_decode($parts[0]);
-                    $payload = base64_decode($parts[1]);
-                    $signature = base64_decode($parts[2]);
-
-                    $reponsePayload = json_decode($payload);
-
-                    if(!empty($reponsePayload)){
-
-                        /* TODO: Informacion del perfil del usuario */
-                        $nombre = !empty($reponsePayload->name) ? $reponsePayload->name : '';
-                        $email = !empty($reponsePayload->email) ? $reponsePayload->email : '';
-                        $imagen = !empty($reponsePayload->picture) ? $reponsePayload->picture : '';
-
-                    }
-
-                    $datos = $usuario->get_usuario_correo($email);
-
-                    if(is_array($datos) == true and count($datos) == 0){
-
-                        $datos1 = $usuario->registrar_usuario($nombre, $email, "", $imagen, 1);
-
-                        $_SESSION["usu_id"] = $datos1[0]["usu_id"];
-                        $_SESSION["usu_nomape"] = $nombre;                        
-                        $_SESSION["usu_correo"] = $email;
-                        $_SESSION["usu_img"] = $imagen;
-
-                        echo "1";
-
-                    }
-                    else{
-
-                        $usu_id = $datos[0]["usu_id"];
-
-                        $_SESSION["usu_id"] = $usu_id;
-                        $_SESSION["usu_nomape"] = $nombre;                        
-                        $_SESSION["usu_correo"] = $email;
-                        $_SESSION["usu_img"] = $imagen;
-
-                        echo "0";
-
-                    }
-
-                    
-                }else{
-
-                    echo json_encode(
-                        [
-                            'error' => 'Los datos de la cuenta no están disponibles'
-                        ]
-                    );
-
-                }
-            }
-
             break;
 
     }

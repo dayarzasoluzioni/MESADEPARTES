@@ -1,4 +1,4 @@
-let arrImages = [];
+let arrDocument = [];
 
 Dropzone.autoDiscover = false;
 
@@ -6,7 +6,7 @@ Dropzone.autoDiscover = false;
 let myDropzone = new Dropzone('.dropzone',{
 
     url: '../../assets/document',
-    maxFilesize: 2,
+    maxFilesize: 5,
     maxFiles: 5,
     acceptedFiles: 'application/pdf',
     addRemoveLinks: true,
@@ -42,6 +42,19 @@ myDropzone.on('addedfile', function(file){
 
 });
 
+myDropzone.on('addedfile', file =>{
+
+    arrDocument.push(file);
+
+});
+
+myDropzone.on('removedfile', file =>{
+
+    let i = arrDocument.indexOf(file);
+    arrDocument.splice(i, 1);
+
+})
+
 function init(){
 
     $("#documento_form").on("submit", function(e){
@@ -55,18 +68,61 @@ function init(){
 function guardar (e){
 
     e.preventDefault();
-    var formData = new FormData($("#documento_form")[0]);
-    $.ajax({
 
+    if(arrDocument.length === 0){
+
+        Swal.fire({
+        title: "No se adjuntaron archivos, desea registrar el trámite sin documentos?",
+        icon: "info",
+        showDenyButton: true,
+        confirmButtonText: "Si",
+        denyButtonText: `No`
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+
+            enviartramite();
+
+        } 
+        });
+    }else{
+
+        enviartramite();
+
+    }
+
+}
+
+function enviartramite(){
+
+    $('#btnguardar').prop("disabled", true);
+    $('#btnguardar').html('<i class="bx bx-hourglass bx-spin font-size-16 align-middle me-2"></i>Espere...');
+    var formData = new FormData($("#documento_form")[0]);
+    var totalfiles = arrDocument.length;
+      
+    for(var i = 0; i < totalfiles; i++){
+        formData.append("file[]", arrDocument[i]);
+    }
+    $.ajax({
         url: "../../controller/documento.php?op=registrar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
         success: function(data){
+            $('#documento_form')[0].reset();
+            Dropzone.forElement('.dropzone').removeAllFiles(true);
             console.log(data);
+            /* data = JSON.parse(data); */
+            Swal.fire({
+                title: "Mesa de Partes - Registro de Trámites",
+                html: "Trámite registrado con éxito y número: <br><strong>" + data + "</strong>",
+                icon: "success",
+                confirmButtonColor: "#5156be",
+            });
+            $('#btnguardar').prop("disabled", false);
+            $('#btnguardar').html('Guardar');
         }
-
     });
 
 }
@@ -91,6 +147,13 @@ $(document).ready(function() {
 
     });
     
+});
+
+$(document).on("click","#btnlimpiar", function(){
+
+    $('#documento_form')[0].reset();
+    Dropzone.forElement('.dropzone').removeAllFiles(true);
+
 });
 
 init();

@@ -20,7 +20,7 @@
 
                 foreach($datos as $row){
 
-                    $html.="<option value='".$row['tipo_id']."'>".$row['tipo_nom']."</option>";
+                    $html.="<option value='".$row['tip_id']."'>".$row['tip_nom']."</option>";
 
                 }
 

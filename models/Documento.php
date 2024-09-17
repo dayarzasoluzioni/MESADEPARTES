@@ -38,6 +38,50 @@
 
         }
 
+        public function insert_documento_detalle($doc_id, $det_nom, $usu_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla td_documento_detalle */
+            $sql="INSERT INTO td_documento_detalle 
+                (doc_id, det_nom, usu_id) 
+                VALUES 
+                (?,?,?)";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$doc_id);
+            $sql->bindValue(2,$det_nom);
+            $sql->bindValue(3,$usu_id);
+
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
+        public function get_documento_x_id($doc_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla td_documento_detalle */
+            $sql="CALL sp_l_documento_01(?);";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$doc_id);
+
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+            return $sql->fetchAll(pdo::FETCH_ASSOC);
+
+        }
+
     }
 
 ?>

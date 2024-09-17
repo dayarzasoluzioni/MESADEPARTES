@@ -11,7 +11,7 @@
             /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_tipo */
             $sql="SELECT * FROM tm_tipo
                 WHERE est = 1
-                ORDER BY tipo_nom asc";
+                ORDER BY tip_nom asc";
 
             /* TODO: Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);

@@ -147,8 +147,8 @@
                                                     </div>
                                                     
                                                     <div class="d-flex flex-wrap gap-2 mt-4 text-center">
-                                                        <button type="button" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
-                                                        <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                                                        <button type="button" id="btnlimpiar" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
+                                                        <button type="submit" id="btnguardar" class="btn btn-primary waves-effect waves-light">Guardar</button>
                                                     </div>                                                
                                             
                                                 </div>
