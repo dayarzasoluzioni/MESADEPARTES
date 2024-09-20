@@ -14,13 +14,13 @@
         /* TODO: Si la operación es Recuperar */
         case "recuperar":
             /* TODO: Llama al método recuperar_usuario de la instancia $usuario con los datos del formulario */
-            $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
+            $datos = $usuario->get_usuario_correo($_POST["usu_correo"], $_POST["rol_id"]);
             if(is_array($datos) == true and count($datos) == 0){
                 echo "0";
             }else{
+                $email->recuperar($_POST["usu_correo"], $_POST["rol_id"]);
                 echo "1";
-            }
-            $email->recuperar($_POST["usu_correo"]);
+            }            
                         
             break;
 

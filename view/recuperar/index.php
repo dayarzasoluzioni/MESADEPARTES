@@ -53,7 +53,7 @@
                                                 <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electrónico">
                                             </div>
                                             <div class="mb-3 mt-4">
-                                                <a class="btn btn-primary w-100 waves-effect waves-light" id="btnrecuperar">Recuperar</a>
+                                                <a class="btn btn-primary w-100 waves-effect waves-light" id="btnrecuperar" style="background-color: #d63838">Recuperar</a>
                                             </div>
                                         </form>
 

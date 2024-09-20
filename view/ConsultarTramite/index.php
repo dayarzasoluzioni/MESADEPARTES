@@ -57,12 +57,14 @@
 
                                                     <thead>
                                                         <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Salary</th>
+                                                            <th>Nro. Tramite</th>
+                                                            <th>Area</th>
+                                                            <th>Tramite</th>
+                                                            <th>Doc. Externo</th>
+                                                            <th>Tipo</th>
+                                                            <th>Doc.</th>
+                                                            <th>Nombre</th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                         

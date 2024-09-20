@@ -1,6 +1,7 @@
 <div class="col-xxl-9 col-lg-8 col-md-7">
     <div class="auth-bg pt-md-5 p-4 d-flex">
-        <div class="bg-overlay bg-primary"></div>
+        <!-- <div class="bg-overlay bg-primary"></div> -->
+        <div class="bg-overlay bg-danger"></div>
         <ul class="bg-bubbles">
             <li></li>
             <li></li>
@@ -27,7 +28,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="testi-contain text-white">
-                                    <i class="bx bxs-quote-alt-left text-success display-6"></i>
+                                    <i class="bx bxs-quote-alt-left text-white display-6"></i>
 
                                     <h4 class="mt-4 fw-medium lh-base text-white">“Excelente empresa y
                                         sus empleados siempre respetuosos. Quiero contrato de por vida”
@@ -49,7 +50,7 @@
 
                             <div class="carousel-item">
                                 <div class="testi-contain text-white">
-                                    <i class="bx bxs-quote-alt-left text-success display-6"></i>
+                                    <i class="bx bxs-quote-alt-left text-white display-6"></i>
 
                                     <h4 class="mt-4 fw-medium lh-base text-white">“Desde que dan desayuno en la mañana
                                         siempre llego temprano.”</h4>
@@ -70,7 +71,7 @@
 
                             <div class="carousel-item">
                                 <div class="testi-contain text-white">
-                                    <i class="bx bxs-quote-alt-left text-success display-6"></i>
+                                    <i class="bx bxs-quote-alt-left text-white display-6"></i>
 
                                     <h4 class="mt-4 fw-medium lh-base text-white">“Su personal siempre está dispuesto
                                         a apoyarnos.”</h4>

@@ -52,9 +52,9 @@ function validateText(fieldId){
 function validatePassword(){
 
     var password = $("#usu_pass").val();
-    var isValid = validator.isLength(password,{min:8});
+    var isValid = validator.isLength(password,{min:6});
     /* TODO: Muestra el mensaje de error si la validación no es exitosa */
-    displayErrorMessage("#usu_pass" , isValid, "La contraseña debe tener al menos 8 caracteres");
+    displayErrorMessage("#usu_pass" , isValid, "La contraseña debe tener al menos 6 caracteres");
 
     return isValid;
 

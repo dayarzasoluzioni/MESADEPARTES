@@ -74,7 +74,27 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["nrotramite"];
+                $sub_array[] = $row["area_nom"];
+                $sub_array[] = $row["tra_nom"];
+                $sub_array[] = $row["doc_externo"];
+                $sub_array[] = $row["tip_nom"];
+                $sub_array[] = $row["doc_dni"];
+                $sub_array[] = $row["doc_nom"];
+                $sub_array[] = '<button type="button" class="btn btn-soft-primary waves-effect waves-light btn-sm" onClick="ver('.$row["doc_id"].')"><i class="bx bx-message-alt-dots font-size-16 align-middle"></button>';
+                $data[] = $sub_array;
+
             }
+
+            $results = array(
+
+                "sEcho" => 1,
+                "iTotalRecords" => count($data),
+                "iTotalDisplayRecords" => count($data),
+                "aaData" => $data
+
+            );  
+            
+            echo json_encode($results);
 
             break;
 

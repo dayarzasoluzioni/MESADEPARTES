@@ -63,12 +63,12 @@
 
         }
 
-        public function recuperar($usu_correo){
+        public function recuperar($usu_correo, $rol_id){
 
             $conexion = new Conectar();
 
             $usuario = new Usuario();
-            $datos = $usuario ->get_usuario_correo($usu_correo);
+            $datos = $usuario ->get_usuario_correo($usu_correo, $rol_id);
 
             /* $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
             $cifrado = openssl_encrypt($usu_id, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
@@ -92,7 +92,15 @@
             $this->IsHTML(true);
             $this->Subject = "Mesa de Partes";
 
-            $url = $conexion->ruta();
+            if($rol_id == 1){
+
+                $url = $conexion->ruta();
+
+            }elseif($rol_id == 2){
+
+                $url = $conexion->ruta()."view/accesopersonal/";
+
+            }            
 
             /* TODO: Generar la cadena alfanmérica */
             $xpassusu = $this->generarXPassUsu();

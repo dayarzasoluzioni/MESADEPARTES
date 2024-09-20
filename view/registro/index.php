@@ -84,7 +84,7 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Registrarse</button>
+                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" style="background-color: #d63838">Registrarse</button>
                                             </div>
 
                                         </form>
