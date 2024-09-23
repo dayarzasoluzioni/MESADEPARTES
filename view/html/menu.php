@@ -72,14 +72,14 @@
 
                             <li>
                                 <a href="../mntusuario/">
-                                    <i data-feather="home"></i>
-                                    <span data-key="t-dashboard">Mnt. Usuario</span>
+                                    <i class="fas fa-users"></i>
+                                    <span data-key="t-dashboard">Mnt. Colaborador</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="../mntarea/">
-                                    <i data-feather="grid"></i>
+                                    <i class="fas fa-network-wired"></i>
                                     <span data-key="t-apps">Mnt. Área</span>
                                 </a>
                             </li>
@@ -87,7 +87,7 @@
                             <li>
 
                                 <a href="../mnttramite/">
-                                    <i data-feather="users"></i>
+                                    <i class=" bx bx-file"></i>
                                     <span data-key="t-authentication">Mnt. Trámite</span>
                                 </a>
 
@@ -96,7 +96,7 @@
                             <li>
 
                                 <a href="../mnttipo/">
-                                    <i data-feather="users"></i>
+                                    <i class="fas fa-user-cog"></i>
                                     <span data-key="t-authentication">Mnt. Tipo</span>
                                 </a>
 

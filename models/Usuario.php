@@ -265,6 +265,111 @@
 
         }
 
+        public function insert_colaborador($usu_nomape, $usu_correo, $rol_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo registro en la tabla tm_usuario */
+            $sql="INSERT INTO tm_usuario 
+                (usu_nomape, usu_correo, usu_img, rol_id, est)
+                VALUES (?, ?, '../../assets/picture/avatar.png', ?, 1)";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_nomape);
+            $sql->bindValue(2,$usu_correo);
+            $sql->bindValue(3,$rol_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+            $sql1 = "select last_insert_id() as 'usu_id'";
+            $sql1=$conectar->prepare($sql1);
+            $sql1->execute();
+
+            return $sql1->fetchAll();
+
+        }
+
+        public function get_colaborador(){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para obtener un registro en la tabla tm_area */
+            $sql="SELECT 
+                tm_usuario.usu_id,
+                tm_usuario.usu_nomape,
+                tm_usuario.usu_correo,
+                tm_usuario.rol_id,
+                tm_rol.rol_nom,
+                tm_usuario.fech_crea
+                FROM tm_usuario
+                INNER JOIN tm_rol
+                ON tm_usuario.rol_id = tm_rol.rol_id
+                WHERE tm_usuario.est = 1
+                AND tm_usuario.rol_id IN (2,3)";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+            return $sql->fetchAll();
+
+        }
+
+        public function update_colaborador($usu_id, $usu_nomape, $usu_correo, $rol_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para actualizar un registro en la tabla tm_usuario */
+            $sql="UPDATE tm_usuario
+                    SET
+                    usu_nomape = ?,
+                    usu_correo = ?,
+                    rol_id = ?,
+                    fech_modi = NOW()
+                    WHERE
+                    usu_id = ?";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_nomape);
+            $sql->bindValue(2,$usu_correo);
+            $sql->bindValue(3,$rol_id);
+            $sql->bindValue(4,$usu_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
+        public function eliminar_colaborador($usu_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para eliminar un usuario de la tabla tm_usuario */
+            $sql="UPDATE tm_usuario
+                SET
+                    est = 0,
+                    fech_elim = NOW()
+                WHERE
+                    usu_id = ?";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
     }
 
 ?>

@@ -30,6 +30,89 @@
 
             break;
 
+        case "listar":
+
+            $datos = $tramite->get_tramite();
+            $data = Array();
+            foreach($datos as $row){
+                $sub_array = array();
+                $sub_array[] = $row["tra_nom"];
+                $sub_array[] = substr($row["tra_descrip"], 0 , 45)."...";
+                /* $sub_array[] = $row["tra_descrip"]; */
+                $sub_array[] = $row["fech_crea"];
+                $sub_array[] = '<button type="button" class="btn btn-warning waves-effect waves-light btn-sm" onClick="editar('.$row["tra_id"].')"><i class="bx bx-edit-alt font-size-16 align-middle"></button>';
+                $sub_array[] = '<button type="button" class="btn btn-danger waves-effect waves-light btn-sm" onClick="eliminar('.$row["tra_id"].')"><i class="bx bx-trash-alt font-size-16 align-middle"></button>';
+                $data[] = $sub_array;
+
+            }
+
+            $results = array(
+
+                "sEcho" => 1,
+                "iTotalRecords" => count($data),
+                "iTotalDisplayRecords" => count($data),
+                "aaData" => $data
+
+            );  
+            
+            echo json_encode($results);
+
+            break;
+
+        case "guardaryeditar":
+
+            /* TODO: Llama al método get_tra_nombre de la instancia $area con los datos del formulario */
+            $datos = $tramite->get_tra_nombre($_POST["tra_nom"]);
+            if(is_array($datos) == true and count($datos) == 0){
+
+                if(empty($_POST["tra_id"])){
+
+                    $tramite->insert_tramite($_POST["tra_nom"], $_POST["tra_descrip"]);
+                    echo "1";
+    
+                }else{
+    
+                    $tramite->update_tramite($_POST["tra_id"], $_POST["tra_nom"], $_POST["tra_descrip"]);
+                    echo "2";
+    
+                }
+
+            }else{
+                echo "0";
+            }
+
+            
+
+            break;
+
+        case "mostrar":
+
+            $datos = $tramite->get_tra_x_id($_POST["tra_id"]);
+
+            if(is_array($datos) == true and count($datos) > 0){
+
+                foreach($datos as $row){
+
+                    $output["tra_id"] = $row["tra_id"];
+                    $output["tra_nom"] = $row["tra_nom"];
+                    $output["tra_descrip"] = $row["tra_descrip"];
+
+                }
+
+                echo json_encode($output);
+
+            }
+
+            break;
+
+        case "eliminar":
+
+            $tramite->eliminar_tramite($_POST["tra_id"]);
+
+            echo "1";
+            
+            break;
+
     }
 
 ?>
