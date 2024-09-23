@@ -89,7 +89,7 @@
                 }
                 else{
 
-                    $sql="SELECT * FROM tm_usuario WHERE usu_correo=? AND rol_id = 2";
+                    $sql="SELECT * FROM tm_usuario WHERE usu_correo=? AND rol_id IN (2,3)";
                     $sql=$conectar->prepare($sql);
                     $sql->bindValue(1, $correo);
                     $sql->execute();
@@ -112,7 +112,7 @@
                                 $_SESSION["usu_correo"] = $resultado["usu_correo"];
                                 $_SESSION["usu_img"] = $resultado["usu_img"];
                                 $_SESSION["rol_id"] = $resultado["rol_id"];
-                                header("Location:".Conectar::ruta()."view/Home/");
+                                header("Location:".Conectar::ruta()."view/homecolaborador/");
                                 exit();
 
                             }
@@ -171,7 +171,7 @@
 
         }
 
-        public function get_usuario_correo($usu_correo, $rol_id){
+        public function get_usuario_correo($usu_correo){
 
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
             $conectar = parent::conexion();
@@ -179,14 +179,12 @@
             parent::set_names();
             /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
             $sql="SELECT * FROM tm_usuario
-                WHERE usu_correo = ?
-                AND rol_id = ?";
+                WHERE usu_correo = ?";
 
             /* TODO: Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);
             /* TODO: Vincular los valores a los parámetros de la consulta */
             $sql->bindValue(1,$usu_correo);
-            $sql->bindValue(2,$rol_id);
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
             return $sql->fetchAll();

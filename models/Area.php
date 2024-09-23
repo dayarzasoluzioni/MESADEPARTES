@@ -8,7 +8,7 @@
             $conectar = parent::conexion();
             /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
             parent::set_names();
-            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_area */
+            /* TODO: Consulta SQL para obtener un registro en la tabla tm_area */
             $sql="SELECT * FROM tm_area
                 WHERE est = 1
                 ORDER BY area_nom asc";
@@ -18,6 +18,115 @@
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
             return $sql->fetchAll();
+
+        }
+
+        public function insert_area($area_nom, $area_correo){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo registro en la tabla tm_area */
+            $sql="INSERT INTO tm_area (area_nom, area_correo)
+                VALUES (?, ?)";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$area_nom);
+            $sql->bindValue(2,$area_correo);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
+        public function update_area($area_id, $area_nom, $area_correo){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para actualizar un registro en la tabla tm_area */
+            $sql="UPDATE tm_area
+                    SET
+                    area_nom = ?,
+                    area_correo = ?,
+                    fech_modi = NOW()
+                    WHERE
+                    area_id = ?";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$area_nom);
+            $sql->bindValue(2,$area_correo);
+            $sql->bindValue(3,$area_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
+        public function get_area_nombre($area_nom){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para obtener el nombre del area en la tabla tm_area */
+            $sql="SELECT * FROM tm_area
+                WHERE area_nom = ?";
+
+            /* $sql = "SELECT * FROM tm_area WHERE area_nom = ? AND est = 1";  // Solo busca registros activos */
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$area_nom);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+            return $sql->fetchAll();
+
+        }
+
+        public function get_area_x_id($area_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para obtener un area por id en la tabla tm_area */
+            $sql="SELECT * FROM tm_area
+                WHERE area_id = ?";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$area_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+            return $sql->fetchAll();
+
+        }
+
+        public function eliminar_area($area_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para eliminar un area de la tabla tm_area */
+            $sql="UPDATE tm_area
+                SET
+                    est = 0,
+                    fech_elim = NOW()
+                WHERE
+                    area_id = ?";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$area_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
 
         }
 

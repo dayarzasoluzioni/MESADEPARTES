@@ -14,7 +14,7 @@
         /* TODO: Si la operación es Registrar */
         case "registrar":
             /* TODO: Llama al método registrar_usuario de la instancia $usuario con los datos del formulario */
-            $datos = $usuario->get_usuario_correo($_POST["usu_correo"],1);
+            $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
             if(is_array($datos) == true and count($datos) == 0){
                 $datos1 = $usuario->registrar_usuario($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["usu_pass"], "../../assets/picture/avatar.png", 2);
                 $email->registrar($datos1[0]["usu_id"]);
@@ -59,7 +59,7 @@
 
                     }
 
-                    $datos = $usuario->get_usuario_correo($email,1);
+                    $datos = $usuario->get_usuario_correo($email);
 
                     if(is_array($datos) == true and count($datos) == 0){
 
@@ -69,7 +69,7 @@
                         $_SESSION["usu_nomape"] = $nombre;                        
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] = $imagen;
-                        $_SESSION["rol_id"] = 1;
+                        $_SESSION["rol_id"] = $datos1[0]["rol_id"];
 
                         echo "1";
 
@@ -82,7 +82,7 @@
                         $_SESSION["usu_nomape"] = $nombre;                        
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] = $imagen;
-                        $_SESSION["rol_id"] = 1;
+                        $_SESSION["rol_id"] = $datos[0]["rol_id"];
 
                         echo "0";
 
@@ -130,7 +130,7 @@
 
                     }
 
-                    $datos = $usuario->get_usuario_correo($email,2);
+                    $datos = $usuario->get_usuario_correo($email);
 
                     if(is_array($datos) == true and count($datos) == 0){
 
@@ -145,7 +145,7 @@
                         $_SESSION["usu_nomape"] = $nombre;                        
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] = $imagen;
-                        $_SESSION["rol_id"] = 2;
+                        $_SESSION["rol_id"] = $datos[0]["rol_id"];
 
                         echo "0";
 

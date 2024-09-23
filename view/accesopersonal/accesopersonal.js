@@ -26,7 +26,7 @@ function handleCredentialResponse(response){
 
             if(data === "0"){
 
-                window.location.href = '../../view/home/';
+                window.location.href = '../../view/homecolaborador/';
 
             }else if(data === "1"){
 
