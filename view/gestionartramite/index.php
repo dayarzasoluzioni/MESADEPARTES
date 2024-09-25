@@ -1,6 +1,10 @@
 <?php
     require_once("../../config/conexion.php");
-    if(isset($_SESSION["usu_id"])){
+    require_once("../../models/rol.php");
+    $rol = new Rol();
+    $datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "gestionartramite");
+
+    if(isset($_SESSION["usu_id"]) and count($datos) > 0){
 
     
 ?>

@@ -21,7 +21,7 @@ function guardaryeditar (e){
     var formData = new FormData($("#mnt_form")[0]);
     
     $.ajax({
-        url: "../../controller/usuario.php?op=guardaryeditar",
+        url: "../../controller/rol.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -30,12 +30,9 @@ function guardaryeditar (e){
 
           console.log(datos);
 
-          if(datos == 1){            
-            
-            $('#btnguardar').prop("disabled", false);
-            $('#btnguardar').html('Guardar');
+          if(datos == 1){              
 
-            $("#usu_id").val('');
+            $("#rol_id").val('');
 
             $("#listado_table").DataTable().ajax.reload();
   
@@ -44,8 +41,8 @@ function guardaryeditar (e){
             $('#mnt_form')[0].reset();
 
             Swal.fire({
-              title: "Mantenimiento Colaborador",
-              text: "Nuevo Colaborador Registrado",
+              title: "Mantenimiento rol",
+              text: "Nuevo rol Registrado",
               icon: "success",
               confirmButtonColor: "#5156be",
             });
@@ -53,8 +50,8 @@ function guardaryeditar (e){
           }else if(datos == 0){
 
             Swal.fire({
-              title: "Mantenimiento Colaborador",
-              text: "El colaborador ya se encuentra registrado",
+              title: "Mantenimiento rol",
+              text: "El rol ya se encuentra registrado",
               icon: "error",
               confirmButtonColor: "#5156be",
             });
@@ -62,7 +59,7 @@ function guardaryeditar (e){
             /* $('#mnt_form')[0].reset(); */
 
           }else if(datos == 2){
-            $("#usu_id").val('');
+            $("#rol_id").val('');
 
             $('#mnt_form')[0].reset();
 
@@ -71,33 +68,19 @@ function guardaryeditar (e){
             $("#mnt_modal").modal('hide');           
 
             Swal.fire({
-              title: "Mantenimiento Colaborador",
+              title: "Mantenimiento rol",
               text: "Registro Editado",
               icon: "success",
               confirmButtonColor: "#5156be",
             });
           }
 
-        },
-
-        beforeSend: function(){
-
-          $('#btnguardar').prop("disabled", true);
-          $('#btnguardar').html('<i class="bx bx-hourglass bx-spin font-size-16 align-middle me-2"></i>Registrando...');
-
-      },
+        }
     });
 
 }
 
 $(document).ready(function () {
-
-    $.post("../../controller/rol.php?op=combo", function(data){
-
-        $('#rol_id').html(data);
-
-    });
-
     tabla = $("#listado_table").dataTable({
 
       "aProcessing": true,
@@ -113,7 +96,7 @@ $(document).ready(function () {
         'pdfHtml5'
       ],
       "ajax": {
-        url: '../../controller/usuario.php?op=listar',
+        url: '../../controller/rol.php?op=listar',
         type: "get",
         dataType: "json",
         error: function(e){
@@ -125,11 +108,9 @@ $(document).ready(function () {
       "columnDefs": [
         { "width": "10%", "targets": 0 },
         { "width": "10%", "targets": 1 },
-        { "width": "10%", "targets": 2 },
-        { "width": "10%", "targets": 3 },
+        { "width": "1%", "targets": 2, "className": "text-center" },
+        { "width": "1%", "targets": 3, "className": "text-center" },
         { "width": "1%", "targets": 4, "className": "text-center" },
-        { "width": "1%", "targets": 5, "className": "text-center" },
-        { "width": "1%", "targets": 6, "className": "text-center" },
       ],
       "bInfo": true,
       "iDisplayLength": 10,
@@ -163,31 +144,29 @@ $(document).ready(function () {
 
 $(document).on("click", "#btnnuevo", function(){
 
-  $("#usu_id").val('');
+  $("#rol_id").val('');
   $("#mnt_form")[0].reset();
   $("#mnt_modal").modal('show');
-  $("#myModalLabel").html('Nuevo Colaborador');
+  $("#myModalLabel").html('Nuevo rol');
 
 });
 
-function editar(usu_id){
+function editar(rol_id){
 
-  $("#myModalLabel").html('Editar Colaborador');
+  $("#myModalLabel").html('Editar rol');
 
-  $.post("../../controller/usuario.php?op=mostrar", {usu_id: usu_id}, function(data){
+  $.post("../../controller/rol.php?op=mostrar", {rol_id: rol_id}, function(data){
 
     data = JSON.parse(data);
-    $("#usu_id").val(data.usu_id);
-    $("#usu_nomape").val(data.usu_nomape);
-    $("#usu_correo").val(data.usu_correo);
     $("#rol_id").val(data.rol_id);
+    $("#rol_nom").val(data.rol_nom);
     $("#mnt_modal").modal('show');
 
   });
 
 }
 
-function eliminar(usu_id){
+function eliminar(rol_id){
 
   Swal.fire({
     title: "¿Está seguro de eliminar el registro?",
@@ -199,12 +178,12 @@ function eliminar(usu_id){
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
 
-      $.post("../../controller/usuario.php?op=eliminar", {usu_id: usu_id}, function(data){
+      $.post("../../controller/rol.php?op=eliminar", {rol_id: rol_id}, function(data){
 
         $("#listado_table").DataTable().ajax.reload();
 
         Swal.fire({
-          title: "Mantenimiento Colaborador",
+          title: "Mantenimiento rol",
           text: "Registro Eliminado",
           icon: "success",
           confirmButtonColor: "#5156be",
@@ -217,7 +196,7 @@ function eliminar(usu_id){
 
 }
 
-function permiso(usu_id){
+function permiso(rol_id){
 
   tabla_permiso = $("#listado_table_permiso").dataTable({
 
@@ -234,9 +213,9 @@ function permiso(usu_id){
       'pdfHtml5'
     ],
     "ajax": {
-      url: '../../controller/area.php?op=permiso',
+      url: '../../controller/rol.php?op=permiso',
       type: "post",
-      data: {usu_id: usu_id},
+      data: {rol_id: rol_id},
       dataType: "json",
       error: function(e){
         console.log(e.responseText);
@@ -249,7 +228,7 @@ function permiso(usu_id){
     "bDestroy": true,
     "responsive": true,
     "bInfo": true,
-    "iDisplayLength": 10,
+    "iDisplayLength": 15,
     "autowidth": false,
     "language": {
       "sProcessing": "Procesando...",
@@ -281,9 +260,9 @@ function permiso(usu_id){
 
 }
 
-function habilitar(aread_id){
+function habilitar(mend_id){
 
-  $.post("../../controller/area.php?op=habilitar", {aread_id: aread_id}, function(data){
+  $.post("../../controller/rol.php?op=habilitar", {mend_id: mend_id}, function(data){
 
     $("#listado_table_permiso").DataTable().ajax.reload();
 
@@ -291,9 +270,9 @@ function habilitar(aread_id){
 
 }
 
-function deshabilitar(aread_id){
+function deshabilitar(mend_id){
 
-  $.post("../../controller/area.php?op=deshabilitar", {aread_id: aread_id}, function(data){
+  $.post("../../controller/rol.php?op=deshabilitar", {mend_id: mend_id}, function(data){
 
     $("#listado_table_permiso").DataTable().ajax.reload();
 

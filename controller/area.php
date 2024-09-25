@@ -112,6 +112,56 @@
             
             break;
 
+        case "permiso":
+
+            $datos = $area->get_area_usuario_permisos($_POST["usu_id"]);
+            $data = Array();
+            foreach($datos as $row){
+                $sub_array = array();
+                $sub_array[] = $row["area_nom"];
+                if($row["aread_permi"] == "Si"){
+
+                    $sub_array[] = '<button type="button" class="btn btn-success waves-effect waves-light btn-sm" onClick="deshabilitar('.$row["aread_id"].')"><i class="bx bx-check-double font-size-16 align-middle"> Si</button>';
+
+                }else{
+
+                    $sub_array[] = '<button type="button" class="btn btn-danger waves-effect waves-light btn-sm" onClick="habilitar('.$row["aread_id"].')"><i class="bx bx-window-close font-size-16 align-middle"> No</button>';
+
+                }                
+               
+                $data[] = $sub_array;
+
+            }
+
+            $results = array(
+
+                "sEcho" => 1,
+                "iTotalRecords" => count($data),
+                "iTotalDisplayRecords" => count($data),
+                "aaData" => $data
+
+            );  
+            
+            echo json_encode($results);
+
+            break;
+
+        case "habilitar":
+
+            $area->habilitar_area_usuario($_POST["aread_id"]);
+
+            echo "1";
+            
+            break;
+
+        case "deshabilitar":
+
+            $area->deshabilitar_area_usuario($_POST["aread_id"]);
+
+            echo "1";
+            
+            break;
+
     }
 
 ?>

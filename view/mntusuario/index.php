@@ -1,6 +1,10 @@
 <?php
     require_once("../../config/conexion.php");
-    if(isset($_SESSION["usu_id"])){
+    require_once("../../models/rol.php");
+    $rol = new Rol();
+    $datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "mntcolaborador");
+
+    if(isset($_SESSION["usu_id"]) and count($datos) > 0){
 
     
 ?>
@@ -68,6 +72,7 @@
                                                             <th>Fecha de Creación</th>
                                                             <th></th>
                                                             <th></th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                         
@@ -93,6 +98,7 @@
         </div>
 
         <?php require_once("mnt.php") ?>
+        <?php require_once("mntpermiso.php") ?>
 
         <?php require_once("../html/sidebar.php") ?>
 

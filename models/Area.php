@@ -130,6 +130,70 @@
 
         }
 
+        public function get_area_usuario_permisos($usu_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla td_documento_detalle */
+            $sql="CALL sp_i_area_01(?);";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_id);
+
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+            return $sql->fetchAll(pdo::FETCH_ASSOC);
+
+        }
+
+        public function habilitar_area_usuario($aread_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para eliminar un area de la tabla tm_area */
+            $sql="UPDATE td_area_detalle
+                SET
+                    aread_permi = 'Si',
+                    fech_modi = NOW()	
+                WHERE aread_id = ?";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$aread_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
+        public function deshabilitar_area_usuario($aread_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para eliminar un area de la tabla tm_area */
+            $sql="UPDATE td_area_detalle
+                SET
+                    aread_permi = 'No',
+                    fech_modi = NOW()	
+                WHERE aread_id = ?";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$aread_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
     }
 
 ?>

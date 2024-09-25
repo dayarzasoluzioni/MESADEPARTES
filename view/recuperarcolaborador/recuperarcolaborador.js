@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-    
-
 });
 
 $(document).on("click", "#btnrecuperar", function(){
@@ -49,7 +47,9 @@ $(document).on("click", "#btnrecuperar", function(){
         
                 }
                 
-            }, beforeSend: function(){
+            }, 
+            
+            beforeSend: function(){
 
                 $('#btnrecuperar').prop("disabled", true);
                 $('#btnrecuperar').html('<i class="bx bx-hourglass bx-spin font-size-16 align-middle me-2"></i>Enviando correo...');

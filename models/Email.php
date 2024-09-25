@@ -123,6 +123,59 @@
 
         }
 
+        public function nuevo_colaborador($usu_id){
+
+            $conexion = new Conectar();
+
+            $usuario = new Usuario();
+            $datos = $usuario ->get_usuario_id($usu_id);
+
+            /* $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
+            $cifrado = openssl_encrypt($usu_id, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv);
+            $textoCifrado = base64_encode($iv . $cifrado); */
+
+            $this->IsSMTP();
+            $this->Host = 'mail.soluzioni.com.pe';
+
+            // Usa el puerto correcto para SSL
+            $this->Port = 465; // Puerto SSL
+            $this->SMTPAuth = true;
+            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+
+            $this->Username = $this->gCorreo;
+            $this->Password = $this->gContrasena;
+            $this->setFrom($this->gCorreo,"Bienvenido Colaborador a la Mesa de Partes Soluzioni");
+
+            $this->CharSet = 'UTF8';
+            /* $this->addAddress($usu_correo); */
+            $this->addAddress($datos[0]["usu_correo"]);
+            $this->IsHTML(true);
+            $this->Subject = "Mesa de Partes";
+
+            $url = $conexion->ruta()."view/accesopersonal/";
+
+            /* TODO: Generar la cadena alfanumérica */
+            $xpassusu = $this->generarXPassUsu();
+
+            $usuario -> recuperar_usuario($datos[0]["usu_correo"], $xpassusu);
+
+            $cuerpo = file_get_contents("../assets/email/nuevocolaborador.html");
+            $cuerpo = str_replace("xemail", $datos[0]["usu_correo"], $cuerpo);
+            $cuerpo = str_replace("xpassusu", $xpassusu, $cuerpo);
+            $cuerpo = str_replace("xlinksistema", $url, $cuerpo);
+
+            $this->Body = $cuerpo;
+            $this->AltBody = strip_tags("Nuevo Colaborador");
+
+            try{
+                $this->send();
+                return true;
+            }catch(Exception $e){
+                return false;
+            }
+
+        }
+
         private function generarXPassUsu(){
 
             $parteAlfanumerica = substr(md5(rand()), 0, 3);

@@ -34,7 +34,7 @@
                 if(empty($_POST["usu_id"])){
 
                     $datos1 = $usuario->insert_colaborador($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["rol_id"]);
-                    /* $email->registrar($datos1[0]["usu_id"]); */
+                    $email->nuevo_colaborador($datos1[0]["usu_id"]);
                     echo "1";
 
                 }else{
@@ -229,6 +229,7 @@
                 $sub_array[] = $row["usu_correo"];
                 $sub_array[] = $row["rol_nom"];
                 $sub_array[] = $row["fech_crea"];
+                $sub_array[] = '<button type="button" class="btn btn-info waves-effect waves-light btn-sm" onClick="permiso('.$row["usu_id"].')"><i class="bx bx-shield-quarter font-size-16 align-middle"></button>';
                 $sub_array[] = '<button type="button" class="btn btn-warning waves-effect waves-light btn-sm" onClick="editar('.$row["usu_id"].')"><i class="bx bx-edit-alt font-size-16 align-middle"></button>';
                 $sub_array[] = '<button type="button" class="btn btn-danger waves-effect waves-light btn-sm" onClick="eliminar('.$row["usu_id"].')"><i class="bx bx-trash-alt font-size-16 align-middle"></button>';
                 $data[] = $sub_array;
