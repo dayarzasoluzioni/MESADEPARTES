@@ -370,6 +370,35 @@
 
         }
 
+        public function get_usuario_permimso_area($usu_id){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_rol */
+            $sql="SELECT
+                td_area_detalle.aread_id,
+                td_area_detalle.area_id,
+                td_area_detalle.aread_permi,
+                tm_area.area_nom,
+                tm_area.area_correo 
+                FROM td_area_detalle
+                INNER JOIN tm_area ON td_area_detalle.area_id = tm_area.area_id
+                WHERE td_area_detalle.usu_id = ?
+                AND td_area_detalle.aread_permi = 'Si'
+                AND tm_area.est = 1";
+
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+            return $sql->fetchAll(pdo::FETCH_ASSOC);
+
+        }
+
     }
 
 ?>

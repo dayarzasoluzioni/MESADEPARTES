@@ -141,7 +141,13 @@
 
                                                                 <div class="dz-message" data-dz-message>
 
-                                                                    <h5>Suelte los archivos aqui o de clic para cargarlos.</h5>
+                                                                    <h5>
+                                                                        
+                                                                        Suelte los archivos aqui o de clic para cargarlos.
+                                                                        <br><br>
+                                                                        Máximo 5 archivos de tipo *.PDF y máximo 5MB cada uno.
+
+                                                                    </h5>
 
                                                                 </div>
 

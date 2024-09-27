@@ -46,6 +46,28 @@
 
                                 </div>
                             </div>
+
+                            <table id="listado_table" class="table table-bordered dt-responsive  nowrap w-100">
+
+                                <thead>
+                                    <tr>
+                                        <th>Nro. Tramite</th>
+                                        <th>Area</th>
+                                        <th>Tramite</th>
+                                        <th>Doc. Externo</th>
+                                        <th>Tipo</th>
+                                        <th>Doc.</th>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                    
+                                <tbody>
+                                </tbody>
+
+                            </table>
+
                         </div>
                         
                     </div>
@@ -63,6 +85,8 @@
         <div class="rightbar-overlay"></div>
 
         <?php require_once("../html/js.php") ?>
+
+        <script type="text/javascript" src="buscartramite.js"></script>
 
     </body>
 </html>

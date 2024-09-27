@@ -28,24 +28,25 @@
         /* TODO: Si la operación es Registrar Colaborador*/
         case "guardaryeditar":
             /* TODO: Llama al método get_usuario_correo de la instancia $usuario con los datos del formulario */
-            $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
-            if(is_array($datos) == true and count($datos) == 0){
+            
+            if(empty($_POST["usu_id"])){
 
-                if(empty($_POST["usu_id"])){
+                $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
+                if(is_array($datos) == true and count($datos) == 0){
 
                     $datos1 = $usuario->insert_colaborador($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["rol_id"]);
                     $email->nuevo_colaborador($datos1[0]["usu_id"]);
                     echo "1";
 
                 }else{
-
-                    $usuario->update_colaborador($_POST["usu_id"], $_POST["usu_nomape"], $_POST["usu_correo"], $_POST["rol_id"]);
-                    echo "2";
-
+                    echo "0";
                 }
-                
+
             }else{
-                echo "0";
+
+                $usuario->update_colaborador($_POST["usu_id"], $_POST["usu_nomape"], $_POST["usu_correo"], $_POST["rol_id"]);
+                echo "2";
+
             }
             
             break;
@@ -246,6 +247,25 @@
             );  
             
             echo json_encode($results);
+
+            break;
+
+        case "comboarea":
+
+            $datos = $usuario->get_usuario_permimso_area($_SESSION["usu_id"]);
+            $html = "";
+            $html.="<option value='' disabled selected>Seleccionar</option>";
+            if(is_array($datos) == true and count($datos) > 0){
+
+                foreach($datos as $row){
+
+                    $html.="<option value='".$row['area_id']."'>".$row['area_nom']."</option>";
+
+                }
+
+                echo $html;
+
+            }
 
             break;
 

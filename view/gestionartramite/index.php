@@ -46,6 +46,51 @@
 
                                 </div>
                             </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Listado de Trámites</h4>
+                                            <!-- <p class="card-title-desc">(*) Datos obligatorios. </p> -->
+                                        </div>
+
+                                        <div class="card-body">
+
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="form-label" class="form-label">Seleccione Area (*)</label>
+                                                    <select class="form-select" name="area_id" id="area_id" placeholder="Seleccione el area" required>
+                                                        <option value="" disabled selected>Seleccionar</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <table id="listado_table" class="table table-bordered dt-responsive  nowrap w-100">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nro. Tramite</th>
+                                                        <th>Area</th>
+                                                        <th>Tramite</th>
+                                                        <th>Doc. Externo</th>
+                                                        <th>Tipo</th>
+                                                        <th>Doc.</th>
+                                                        <th>Nombre</th>
+                                                        <th>Estado</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                    
+                                                <tbody>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
@@ -58,11 +103,15 @@
 
         </div>
 
+        <?php require_once("mnt.php") ?>
+
         <?php require_once("../html/sidebar.php") ?>
 
         <div class="rightbar-overlay"></div>
 
         <?php require_once("../html/js.php") ?>
+
+        <script type="text/javascript" src="gestionartramite.js"></script>
 
     </body>
 </html>

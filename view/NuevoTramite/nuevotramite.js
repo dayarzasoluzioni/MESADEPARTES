@@ -53,7 +53,7 @@ myDropzone.on('removedfile', file =>{
     let i = arrDocument.indexOf(file);
     arrDocument.splice(i, 1);
 
-})
+});
 
 function init(){
 

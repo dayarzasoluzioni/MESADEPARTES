@@ -51,8 +51,8 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="card-title">Listado de Trámites.</h4>
-                                            <p class="card-title-desc">(*) Datos obligatorios. </p>
+                                            <h4 class="card-title">Listado de Trámites</h4>
+                                            <!-- <p class="card-title-desc">(*) Datos obligatorios. </p> -->
                                         </div>
 
                                         <div class="card-body">

@@ -76,6 +76,9 @@ function guardaryeditar (e){
               icon: "success",
               confirmButtonColor: "#5156be",
             });
+
+            $('#btnguardar').prop("disabled", false);
+            $('#btnguardar').html('Editar');
           }
 
         },
