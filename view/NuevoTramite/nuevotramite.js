@@ -3,19 +3,23 @@ let arrDocument = [];
 Dropzone.autoDiscover = false;
 
 /* TODO: Validaciones a los documentos a cargar en el dropzone */
-let myDropzone = new Dropzone('.dropzone',{
+let myDropzone = new Dropzone('.dropzone', {
 
-    url: '../../assets/document',
-    maxFilesize: 5,
-    maxFiles: 5,
-    acceptedFiles: 'application/pdf',
+    /* url: '../../assets/document', */
+    url: '../../controller/documento.php?op=temporary_upload',
+    maxFilesize: 5, // Tamaño máximo de archivo en MB
+    maxFiles: 5, // Número máximo de archivos
+    acceptedFiles: 'application/pdf, text/xml, application/xml, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     addRemoveLinks: true,
     dictRemoveFile: 'Eliminar',
-    error: function(file, response){
-        console.log('Error durante la carga del archivo')
+    cache: false,
+    processData: false,
+    error: function(file, response) {
+        console.log('Error durante la carga del archivo');
     }
 
 });
+
 
 myDropzone.on('maxfilesexceeded', function(file){
 

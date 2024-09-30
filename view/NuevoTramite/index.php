@@ -145,7 +145,7 @@
                                                                         
                                                                         Suelte los archivos aqui o de clic para cargarlos.
                                                                         <br><br>
-                                                                        Máximo 5 archivos de tipo *.PDF y máximo 5MB cada uno.
+                                                                        Máximo 5 archivos de tipo *.PDF, *.XML, Excel, Word y máximo 5MB cada uno.
 
                                                                     </h5>
 

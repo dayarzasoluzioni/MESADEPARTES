@@ -13,57 +13,52 @@
 
         /* TODO: Si la operación es Registrar */
         case "registrar":
-            /* TODO: Llama al método registrar_usuario de la instancia $usuario con los datos del formulario */
+            //* TODO: Llama al método registrar_usuario de la instancia $usuario con los datos del formulario */
             $datos = $documento->registrar_documento(
-                $_POST["area_id"], 
-                $_POST["tra_id"], 
-                $_POST["doc_externo"], 
-                $_POST["tip_id"], 
-                $_POST["doc_dni"], 
+                $_POST["area_id"],
+                $_POST["tra_id"],
+                $_POST["doc_externo"],
+                $_POST["tip_id"],
+                $_POST["doc_dni"],
                 $_POST["doc_nom"],
-                $_POST["doc_descrip"], 
-                $_SESSION["usu_id"]
-            );            
+                $_POST["doc_descrip"],
+                $_SESSION["usu_id"],
+            );
 
-            if(is_array($datos) == true and count($datos) == 0){                
-                
+            if(is_array($datos) == true and count($datos) == 0){
                 echo "0";
-
             }else{
-                
+
                 $mes = date("m");
                 $anio = date("Y");
 
-                echo $mes ."-". $anio . "-" . $datos[0]["doc_id"];
+                echo $mes."-".$anio."-".$datos[0]["doc_id"];
 
-                if(empty($_FILES['file']['name'])){
+                if (empty($_FILES['file']['name'])){
+
+                    $email->enviar_registro($datos[0]["doc_id"]);
 
                 }else{
                     $countfiles = count($_FILES['file']['name']);
                     $ruta = "../assets/document/".$datos[0]["doc_id"]."/";
                     $file_arr = array();
-
                     if(!file_exists($ruta)){
-                        mkdir($ruta, 0777, true);
+                        mkdir($ruta,0777,true);
                     }
 
-                    for($index = 0; $index < $countfiles; $index++){
-
+                    for ($index=0 ; $index < $countfiles ; $index++){
                         $nombre = $_FILES['file']['tmp_name'][$index];
                         $destino = $ruta.$_FILES['file']['name'][$index];
 
-                        $documento->insert_documento_detalle($datos[0]["doc_id"], $_FILES['file']['name'][$index], $_SESSION["usu_id"], 'Pendiente');
+                        $documento->insert_documento_detalle($datos[0]["doc_id"],$_FILES['file']['name'][$index],$_SESSION["usu_id"],'Pendiente');
 
-                        move_uploaded_file($nombre, $destino);
-
+                        move_uploaded_file($nombre,$destino);
                     }
 
-                    /* TODO: Enviar Alerta por Email */
+                    /* TODO:Enviar Alerta por Email */
                     $email->enviar_registro($datos[0]["doc_id"]);
                 }
-
             }
-            
             break;
 
         /* TODO: Listado de usuario segun formato json para el datatable */
@@ -225,6 +220,8 @@
 
             if(empty($_FILES['file']['name'])){
 
+                $email->respuesta_registro($_POST["doc_id"]);
+
             }else{
                 $countfiles = count($_FILES['file']['name']);
                 $ruta = "../assets/document/".$_POST["doc_id"]."/";
@@ -295,6 +292,38 @@
             );  
             
             echo json_encode($results);
+
+            break;
+
+        case "temporary_upload":
+
+            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+                if(isset($_GET['op']) && $_GET['op'] === 'temporary_upload'){
+
+                    $files = $_FILES['file'];
+
+                    foreach($files['tmp_name'] as $index => $tempFilePath){
+
+                        $contents = file_get_contents($tempFilePath);
+
+                        $temporarilyStoredData[] = $contents;
+
+                    }
+
+                    echo "Carga exitosa (temporal)";
+
+                } else {
+
+                    http_response_code(405);
+                    echo "Método no permitido";
+
+                }
+
+            } else {
+                http_response_code(405);
+                echo "Método no permitido";
+            }
 
             break;
 
