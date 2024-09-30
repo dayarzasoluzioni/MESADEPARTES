@@ -98,13 +98,14 @@
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">DNI / RUC (*)</label>
                                                             <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" min="0" required>
+                                                            <small id="dniError" style="color: red; display: none;">El número de documento debe tener al menos 8 dígitos.</small>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">Nombre / Razón Social (*)</label>
-                                                            <input class="form-control" type="text" value="" id="doc_nom" name="doc_nom" placeholder="Ingrese el nombre o razón social" required>
+                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" min="0" required>
                                                         </div>
                                                     </div>
 
@@ -186,6 +187,22 @@
         <div class="rightbar-overlay"></div>
 
         <?php require_once("../html/js.php") ?>
+
+        <script>
+            document.getElementById('doc_dni').addEventListener('input', function() {
+                let dni = this.value;
+                let dniError = document.getElementById('dniError');
+
+                // Remueve los ceros a la izquierda
+                let dniSinCeros = dni.replace(/^0+/, '');
+
+                if (dniSinCeros.length < 8 && dni.length > 0) {
+                    dniError.style.display = 'block'; // Muestra el mensaje de error
+                } else {
+                    dniError.style.display = 'none'; // Oculta el mensaje de error
+                }
+            });
+        </script>
 
         <script type="text/javascript" src="nuevotramite.js"></script>
 
