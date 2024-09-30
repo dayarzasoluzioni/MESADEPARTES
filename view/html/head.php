@@ -3,6 +3,8 @@
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
 <meta content="Themesbrand" name="author">
 
+<link rel="icon" href="../../assets/image/soluzionilogo.png" type="image/png">
+
 <!-- DataTables -->
 <link href="../../assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">

@@ -22,6 +22,8 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
 
+        <link rel="icon" href="../../assets/image/soluzionilogo.png" type="image/x-icon">
+
         <!-- Sweet Alert-->
         <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 

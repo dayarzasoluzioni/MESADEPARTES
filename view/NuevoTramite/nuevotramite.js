@@ -11,6 +11,9 @@ let myDropzone = new Dropzone('.dropzone',{
     acceptedFiles: 'application/pdf',
     addRemoveLinks: true,
     dictRemoveFile: 'Eliminar',
+    error: function(file, response){
+        console.log('Error durante la carga del archivo')
+    }
 
 });
 

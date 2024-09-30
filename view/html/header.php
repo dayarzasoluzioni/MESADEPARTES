@@ -47,12 +47,13 @@
                     </form>
                 </div>
             </div>
-            <div class="dropdown d-none d-sm-inline-block">
+            <!-- Modo dia Modo noche-->
+            <!-- <div class="dropdown d-none d-sm-inline-block">
                 <button type="button" class="btn header-item" id="mode-setting-btn">
                     <i data-feather="moon" class="icon-lg layout-mode-dark"></i>
                     <i data-feather="sun" class="icon-lg layout-mode-light"></i>
                 </button>
-            </div>
+            </div> -->
 
             <input type="hidden" id="user_idx" value="<?php echo $_SESSION["usu_id"]?>">
             <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["rol_id"]?>">

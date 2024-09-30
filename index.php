@@ -22,6 +22,8 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
 
+        <link rel="icon" href="assets/image/soluzionilogo.png" type="image/png">
+
         <!-- preloader css -->
         <link rel="stylesheet" href="assets/css/preloader.min-1.css" type="text/css">
 
