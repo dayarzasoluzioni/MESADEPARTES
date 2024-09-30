@@ -197,7 +197,7 @@
                 $sub_array[] = "<div class='avatar-sm flex-shrink-0 me-3'><img src='".$row["usu_img"]."' alt='' class='img-thumbnail rounded-circle'></div>";               
 
                 
-                $sub_array[] = '<button type="button" class="btn btn-soft-primary waves-effect waves-light btn-sm" onClick="documento('.$row["det_id"].')"><i class="bx bx-search-alt font-size-16 align-middle"></button>';
+                $sub_array[] = '<a class="btn btn-soft-primary waves-effect waves-light btn-sm" href="../../assets/document/'.$row["doc_id"].'/'.$row["det_nom"].'" target="_blank" download><i class="bx bx-search-alt font-size-16 align-middle"></a>';
                 $data[] = $sub_array;
 
             }

@@ -97,7 +97,7 @@
                                                     <div class="col-lg-3">
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">DNI / RUC (*)</label>
-                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" required>
+                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" min="0" required>
                                                         </div>
                                                     </div>
 
