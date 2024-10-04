@@ -105,7 +105,7 @@
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">Nombre / Razón Social (*)</label>
-                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" min="0" required>
+                                                            <input class="form-control" type="text" value="" id="doc_nom" name="doc_nom" placeholder="Ingrese el nombre o razón social" required>
                                                         </div>
                                                     </div>
 

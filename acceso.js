@@ -24,9 +24,16 @@ function handleCredentialResponse(response){
 
             console.log(data);
 
-            if(data === "0"){
+            if(data === "0"){                
 
-                window.location.href = 'view/home/';
+                /* window.location.href = 'view/home/'; */
+
+                Swal.fire({
+                    title: "Mesa de Partes - Ingreso Usuario",
+                    text: "Usuario registrado como Colaborador",
+                    icon: "error",
+                    confirmButtonColor: "#5156be",
+                  });
 
             }else if(data === "1"){
 

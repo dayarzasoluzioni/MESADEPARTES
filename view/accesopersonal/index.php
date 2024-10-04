@@ -137,7 +137,7 @@
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
-                                            <div class="row mb-4">
+                                            <!-- <div class="row mb-4">
                                                 <div class="col">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="remember-check">
@@ -147,7 +147,7 @@
                                                     </div>  
                                                 </div>
                                                 
-                                            </div>
+                                            </div> -->
                                             <div class="mb-3">
                                                 <input type="hidden" name="enviar" value="si">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" style="background-color: #d63838">Acceder</button>
@@ -199,7 +199,11 @@
 
                                                 </li>
                                             </ul>
-                                        </div> 
+                                        </div>
+
+                                        <div class="mt-5 text-center">
+                                            <p class="text-muted mb-0">¿No eres colaborador? - <a href="../../index.php" class="text-primary fw-semibold"> Accede como Usuario </a> </p>
+                                        </div>
 
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">

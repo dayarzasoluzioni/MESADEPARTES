@@ -53,11 +53,11 @@
                                     <tr>
                                         <th>Nro. Tramite</th>
                                         <th>Area</th>
-                                        <th>Tramite</th>
-                                        <th>Doc. Externo</th>
+                                        <th>Tramite</th>                                        
                                         <th>Tipo</th>
                                         <th>Doc.</th>
                                         <th>Nombre</th>
+                                        <th>Fecha de Cierre</th>
                                         <th>Estado</th>
                                         <th></th>
                                     </tr>

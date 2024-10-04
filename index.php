@@ -24,6 +24,8 @@
 
         <link rel="icon" href="assets/image/soluzionilogo.png" type="image/png">
 
+        <link href="assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
         <!-- preloader css -->
         <link rel="stylesheet" href="assets/css/preloader.min-1.css" type="text/css">
 
@@ -134,7 +136,7 @@
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
-                                            <div class="row mb-4">
+                                            <!-- <div class="row mb-4">
                                                 <div class="col">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="remember-check">
@@ -144,7 +146,7 @@
                                                     </div>  
                                                 </div>
                                                 
-                                            </div>
+                                            </div> -->
                                             <div class="mb-3">
                                                 <input type="hidden" name="enviar" value="si">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit" style="background-color: #d63838">Acceder</button>
@@ -179,7 +181,7 @@
                                                         data-context = "signin"
                                                         data-ux_mode = "popup"
                                                         data-callback = "handleCredentialResponse"
-                                                        data-auto_promp = "false"
+                                                        data-auto_prompt = "false"
                                                     >
                                                     </div>
 
@@ -324,12 +326,16 @@
         <script src="assets/js/simplebar.min-1.js"></script>
         <script src="assets/js/waves.min-1.js"></script>
         <script src="assets/js/feather.min-1.js"></script>
+
         <!-- pace js -->
         <script src="assets/js/pace.min-1.js"></script>
         <!-- password addon init -->
         <script src="assets/js/pass-addon.init-1.js"></script>
         <!--TODO: Script para cargar la API de Google Sign-In de manera asincrona -->
         <script src="https://accounts.google.com/gsi/client" async></script>
+
+        <!-- Sweet Alerts js -->
+        <script src="assets/js/sweetalert2.min.js"></script>
 
         <script type="text/javascript" src="acceso.js"></script>
 

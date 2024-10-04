@@ -76,6 +76,7 @@ $(document).ready(function() {
         $("#area_id").each(function(){
 
             area_id = $(this).val();
+            var area_nombre = $("#area_id option:selected").text();  // Captura el nombre del área seleccionada
 
             tabla = $("#listado_table").dataTable({
 
@@ -89,7 +90,18 @@ $(document).ready(function() {
                   'copyHtml5',
                   'excelHtml5',
                   'csvHtml5',
-                  'pdfHtml5'
+                  {
+                    extend: 'pdfHtml5',
+                    orientation: 'landscape',  // Cambiar la orientación a horizontal
+                    pageSize: 'A4',  // Tamaño del PDF (opcional)
+                    title: function() {
+                      // Retorna el título dinámico: Listado de Documentos + Nombre del área seleccionada
+                      return 'Listado de Trámites - ' + area_nombre;
+                    },
+                    exportOptions: {
+                        columns: ':visible'  // Exportar solo columnas visibles
+                    }
+                  }
                 ],
                 "ajax": {
                   url: '../../controller/documento.php?op=listarxarea',
@@ -156,11 +168,12 @@ function ver(doc_id){
 
     $("#area_nom").val(data.area_nom);
     $("#tra_nom").val(data.tra_nom);
-    $("#doc_externo").val(data.doc_externo);    
+    $("#doc_externo").val(data.doc_externo);  
     $("#tip_nom").val(data.tip_nom);
     $("#doc_dni").val(data.doc_dni);
     $("#doc_nom").val(data.doc_nom);
     $("#doc_descrip").val(data.doc_descrip);
+    $("#fech_crea").val(data.fech_crea);
 
     $("#doc_id").val(data.doc_id);
 

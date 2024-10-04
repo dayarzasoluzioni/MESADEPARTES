@@ -12,10 +12,21 @@ $(document).ready(function() {
         lengthChange: false,
         colReorder: true,
         buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
+          'copyHtml5',
+          'excelHtml5',
+          'csvHtml5',
+          {
+            extend: 'pdfHtml5',
+            orientation: 'landscape',  // Cambiar la orientación a horizontal
+            pageSize: 'A4',  // Tamaño del PDF (opcional)
+            title: function() {
+              // Retorna el título dinámico: Listado de Documentos + Nombre del área seleccionada
+              return 'Listado de Trámites Terminados';
+            },
+            exportOptions: {
+                columns: ':visible'  // Exportar solo columnas visibles
+            }
+          }
         ],
         "ajax": {
             url: '../../controller/documento.php?op=listarxusuterminado',
@@ -36,7 +47,7 @@ $(document).ready(function() {
             { "width": "10%", "targets": 5 },
             { "width": "10%", "targets": 6 },
             { "width": "10%", "targets": 7, "className": "text-center" },
-            { "width": "1%", "targets": 8 },
+            { "width": "1%", "targets": 8, "className": "text-center" },
         ],
         "bInfo": true,
         "iDisplayLength": 10,
@@ -77,7 +88,7 @@ function ver(doc_id){
   
       $("#area_nom").val(data.area_nom);
       $("#tra_nom").val(data.tra_nom);
-      $("#doc_externo").val(data.doc_externo);    
+      $("#fech_crea").val(data.fech_crea);    
       $("#tip_nom").val(data.tip_nom);
       $("#doc_dni").val(data.doc_dni);
       $("#doc_nom").val(data.doc_nom);

@@ -13,7 +13,18 @@ $(document).ready(function () {
         'copyHtml5',
         'excelHtml5',
         'csvHtml5',
-        'pdfHtml5'
+        {
+          extend: 'pdfHtml5',
+          orientation: 'landscape',  // Cambiar la orientación a horizontal
+          pageSize: 'A4',  // Tamaño del PDF (opcional)
+          title: function() {
+            // Retorna el título dinámico: Listado de Documentos + Nombre del área seleccionada
+            return 'Listado de Trámites Realizados';
+          },
+          exportOptions: {
+              columns: ':visible'  // Exportar solo columnas visibles
+          }
+        }
       ],
       "ajax": {
         url: '../../controller/documento.php?op=listarusuario',

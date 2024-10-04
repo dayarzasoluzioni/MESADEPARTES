@@ -111,10 +111,10 @@
                 $sub_array[] = $row["nrotramite"];
                 $sub_array[] = $row["area_nom"];
                 $sub_array[] = $row["tra_nom"];
-                $sub_array[] = $row["doc_externo"];
                 $sub_array[] = $row["tip_nom"];
                 $sub_array[] = $row["doc_dni"];
                 $sub_array[] = $row["doc_nom"];
+                $sub_array[] = $row["fech_crea"];
 
                 if($row["doc_estado"] == 'Pendiente'){
 
@@ -171,6 +171,8 @@
                     $output["nrotramite"] = $row["nrotramite"];
                     $output["doc_estado"] = $row["doc_estado"];
                     $output["doc_respuesta"] = $row["doc_respuesta"];
+                    $output["fech_crea"] = $row["fech_crea"];
+                    $output["fech_terminado"] = $row["fech_terminado"];
 
                 }
 
@@ -261,11 +263,11 @@
                 $sub_array = array();
                 $sub_array[] = $row["nrotramite"];
                 $sub_array[] = $row["area_nom"];
-                $sub_array[] = $row["tra_nom"];
-                $sub_array[] = $row["doc_externo"];
+                $sub_array[] = $row["tra_nom"];                
                 $sub_array[] = $row["tip_nom"];
                 $sub_array[] = $row["doc_dni"];
                 $sub_array[] = $row["doc_nom"];
+                $sub_array[] = $row["fech_terminado"];
 
                 if($row["doc_estado"] == 'Pendiente'){
 
