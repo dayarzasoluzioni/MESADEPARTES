@@ -26,18 +26,25 @@ function handleCredentialResponse(response){
 
             if(data === "0"){                
 
-                /* window.location.href = 'view/home/'; */
+                window.location.href = 'view/home/';
 
-                Swal.fire({
+               /*  Swal.fire({
                     title: "Mesa de Partes - Ingreso Usuario",
                     text: "Usuario registrado como Colaborador",
                     icon: "error",
                     confirmButtonColor: "#5156be",
-                  });
+                  }); */
 
             }else if(data === "1"){
 
                 window.location.href = 'view/home/';
+
+                /* Swal.fire({
+                    title: "Mesa de Partes - Ingreso Usuario",
+                    text: "Usuario registrado como Colaborador",
+                    icon: "error",
+                    confirmButtonColor: "#5156be",
+                  }); */
 
             }
         }

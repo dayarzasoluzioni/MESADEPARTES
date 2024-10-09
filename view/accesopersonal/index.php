@@ -118,7 +118,7 @@
 
                                             <div class="mb-3">
                                                 <label class="form-label">Correo Electronico</label>
-                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese su Correo Electronico">
+                                                <input type="email" autocomplete="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese su Correo Electronico">
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-start">
@@ -133,7 +133,7 @@
                                                 </div>
                                                 
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese su Contraseña" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" autocomplete="current-password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese su Contraseña" aria-label="Password" aria-describedby="password-addon">
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
@@ -206,9 +206,18 @@
                                         </div>
 
                                     </div>
-                                    <div class="mt-4 mt-md-5 text-center">
+                                    <!-- <div class="mt-4 mt-md-5 text-center">
                                         <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Soluzioni Capital <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
+                                    </div> -->
+                                    <div class="mt-4 mt-md-5 text-center">
+                                        <p class="mb-0">© <span id="currentYear"></span> Soluzioni Capital <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
                                     </div>
+
+                                    <script>
+                                        //TODO: Inserta el año actual en el elemento con id "currentYear"
+                                        document.getElementById('currentYear').textContent = new Date().getFullYear();
+                                    </script>
+
                                 </div>
                             </div>
                         </div>

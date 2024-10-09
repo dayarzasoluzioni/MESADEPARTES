@@ -24,12 +24,12 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
             <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
+            <!-- <form class="app-search d-none d-lg-block">
                 <div class="position-relative">
                     <input type="text" class="form-control" placeholder="Buscar...">
                     <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
                 </div>
-            </form>
+            </form> -->
         </div>
         <div class="d-flex">
             <div class="dropdown d-inline-block d-lg-none ms-2">

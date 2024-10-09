@@ -83,6 +83,7 @@ $(document).ready(function() {
                 "aProcessing": true,
                 "aServerSide": true,
                 dom: 'Bfrtip',
+                deferRender: true,
                 "searching": true,
                 lengthChange: false,
                 colReorder: true,

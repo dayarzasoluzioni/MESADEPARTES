@@ -52,9 +52,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="mt-4 mt-md-5 text-center">
+                                    <!-- <div class="mt-4 mt-md-5 text-center">
                                         <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Soluzioni Capital <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
+                                    </div> -->
+                                    <div class="mt-4 mt-md-5 text-center">
+                                        <p class="mb-0">© <span id="currentYear"></span> Soluzioni Capital <i class="mdi mdi-heart text-danger"></i> Todos los derechos reservados</p>
                                     </div>
+
+                                    <script>
+                                        // Inserta el año actual en el elemento con id "currentYear"
+                                        document.getElementById('currentYear').textContent = new Date().getFullYear();
+                                    </script>
+
                                 </div>
                             </div>
                         </div>
