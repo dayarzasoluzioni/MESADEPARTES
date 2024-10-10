@@ -347,6 +347,29 @@
 
         }
 
+        public function update_colaborador_pass($usu_id, $usu_pass){
+
+            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+            $conectar = parent::conexion();
+            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
+            parent::set_names();
+            /* TODO: Consulta SQL para actualizar un registro en la tabla tm_usuario */
+            $sql="UPDATE tm_usuario
+                    SET
+                    usu_pass = ?,
+                    fech_modi = NOW()
+                    WHERE
+                    usu_id = ?";
+            /* TODO: Preparar la consulta SQL */
+            $sql=$conectar->prepare($sql);
+            /* TODO: Vincular los valores a los parámetros de la consulta */
+            $sql->bindValue(1,$usu_pass);
+            $sql->bindValue(2,$usu_id);
+            /* TODO: Ejecutar la consulta SQL */
+            $sql->execute();
+
+        }
+
         public function eliminar_colaborador($usu_id){
 
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */

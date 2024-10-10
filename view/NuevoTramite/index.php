@@ -197,9 +197,9 @@
                 let dniSinCeros = dni.replace(/^0+/, '');
 
                 if (dniSinCeros.length < 8 && dni.length > 0) {
-                    dniError.style.display = 'block'; // Muestra el mensaje de error
+                    dniError.style.display = 'block'; //TODO: Muestra el mensaje de error
                 } else {
-                    dniError.style.display = 'none'; // Oculta el mensaje de error
+                    dniError.style.display = 'none'; //TODO: Oculta el mensaje de error
                 }
             });
         </script>

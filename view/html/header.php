@@ -57,6 +57,7 @@
 
             <input type="hidden" id="user_idx" value="<?php echo $_SESSION["usu_id"]?>">
             <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["rol_id"]?>">
+            <!-- <input type="hidden" id="user_passx" value="<?php echo $_SESSION["usu_pass"]?>"> -->
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item bg-soft-light border-start border-end" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,9 +67,10 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-<!--                     <a class="dropdown-item" href="apps-contacts-profile.html"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Perfil</a>
+<!--                     
  --><!--                     <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock screen</a>
  -->                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item" href="../cambiarpass/index.php"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Perfil</a>
                     <a class="dropdown-item" href="../html/logout.php"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Cerrar Sesión </a>
                 </div>
             </div>

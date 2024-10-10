@@ -269,6 +269,36 @@
 
             break;
 
-    }
+        case "cambiarpass":
+
+            // Verifica que el ID del usuario y la contraseña estén disponibles en $_POST
+            if (!isset($_POST["usu_id"]) || empty($_POST["usu_pass"])) {
+                echo json_encode(["error" => "Faltan datos para cambiar la contraseña."]);
+                exit;
+            }
+
+            $usu_id = $_POST["usu_id"];
+            $usu_pass = $_POST["usu_pass"];
+
+            // Define el método de cifrado y la clave
+            $cipher = 'aes-256-cbc'; // o el método de cifrado que estés usando
+            $key = 'MesaDePartesSoluzioni'; // Asegúrate de que esta sea tu clave real
+
+            // Genera un IV (vector de inicialización) aleatorio
+            $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($cipher));
+
+            // Cifra la contraseña
+            $cifrado = openssl_encrypt($usu_pass, $cipher, $key, OPENSSL_RAW_DATA, $iv);
+
+            // Codifica el IV y el texto cifrado en base64 para almacenar
+            $textoCifrado = base64_encode($iv . $cifrado);
+
+            // Actualiza la contraseña en la base de datos
+            $usuario->update_colaborador_pass($usu_id, $textoCifrado);
+
+            echo json_encode(["success" => "Contraseña cambiada correctamente."]);
+            break;
+
+        }
 
 ?>
