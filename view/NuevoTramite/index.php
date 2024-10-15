@@ -96,9 +96,9 @@
 
                                                     <div class="col-lg-3">
                                                         <div class="mb-3">
-                                                            <label for="example-text-input" class="form-label">DNI / RUC (*)</label>
-                                                            <input class="form-control" type="number" value="" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" min="0" required>
-                                                            <small id="dniError" style="color: red; display: none;">El número de documento debe tener al menos 8 dígitos.</small>
+                                                            <label for="doc_dni" class="form-label">DNI / RUC (*)</label>
+                                                            <input class="form-control" type="text" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" required>
+                                                            <small id="dniError" style="color: red; display: none;">El número de documento debe tener al menos 8 dígitos y contener solo números.</small>
                                                         </div>
                                                     </div>
 
@@ -190,16 +190,23 @@
 
         <script>
             document.getElementById('doc_dni').addEventListener('input', function() {
-                let dni = this.value;
-                let dniError = document.getElementById('dniError');
+                const dniInput = this.value;
+                const dniError = document.getElementById('dniError');
 
-                // Remueve los ceros a la izquierda
-                let dniSinCeros = dni.replace(/^0+/, '');
-
-                if (dniSinCeros.length < 8 && dni.length > 0) {
-                    dniError.style.display = 'block'; //TODO: Muestra el mensaje de error
+                //TODO: Validar que el DNI contenga solo dígitos y tenga al menos 8 dígitos
+                if (/^\d{8,}$/.test(dniInput)) {
+                    dniError.style.display = 'none'; //TODO: Ocultar mensaje de error si es válido
+                    this.setCustomValidity(''); //TODO: El input es válido
                 } else {
-                    dniError.style.display = 'none'; //TODO: Oculta el mensaje de error
+                    dniError.style.display = 'block'; //TODO: Mostrar mensaje de error si no es válido
+                    this.setCustomValidity('DNI inválido'); //TODO: Marcar el input como inválido
+                }
+            });
+
+            //TODO: Prevenir la entrada de cualquier caracter que no sea un número
+            document.getElementById('doc_dni').addEventListener('keypress', function(event) {
+                if (!/^\d$/.test(event.key)) {
+                    event.preventDefault(); //TODO: Evitar la entrada si no es un número
                 }
             });
         </script>

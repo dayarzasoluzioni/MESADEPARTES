@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="../../assets/image/soluzionilogo.png" alt="" height="24">
                     </span>
@@ -11,7 +11,7 @@
                         <img src="../../assets/image/soluzionilogo.png" alt="" height="24"> <span class="logo-txt">Soluzioni Capital</span>
                     </span>
                 </a>
-                <a href="index.html" class="logo logo-light">
+                <a class="logo logo-light">
                     <span class="logo-sm">
                         <img src="../../assets/image/soluzionilogo.png" alt="" height="24">
                     </span>
