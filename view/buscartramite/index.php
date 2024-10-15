@@ -49,6 +49,20 @@
 
                             <table id="listado_table" class="table table-bordered dt-responsive  nowrap w-100">
 
+                            <!-- <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <label for="fecha_inicio">Fecha Inicio:</label>
+                                    <input type="date" id="fecha_inicio" class="form-control" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="fecha_fin">Fecha Fin:</label>
+                                    <input type="date" id="fecha_fin" class="form-control" />
+                                </div>
+                                <div class="col-md-4 align-self-end">
+                                    <button type="button" id="filtrar_fecha" class="btn btn-primary">Filtrar</button>
+                                </div>
+                            </div> -->
+
                                 <thead>
                                     <tr>
                                         <th>Nro. Tramite</th>

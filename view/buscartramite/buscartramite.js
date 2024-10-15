@@ -31,6 +31,11 @@ $(document).ready(function() {
         "ajax": {
             url: '../../controller/documento.php?op=listarxusuterminado',
             type: "get",
+            /* data: function(d) {
+              // Enviar fechas como parámetros adicionales en la solicitud AJAX
+              d.fecha_inicio = $('#fecha_inicio').val();
+              d.fecha_fin = $('#fecha_fin').val();
+            }, */
             dataType: "json",
             error: function(e){
             console.log(e.responseText);
@@ -77,6 +82,12 @@ $(document).ready(function() {
             }
         }
         }).DataTable();
+
+        // Botón para filtrar por fechas
+        $('#filtrar_fecha').on('click', function() {
+          // Recargar la tabla cuando se haga clic en el botón de filtro
+          tabla.ajax.reload();
+        });
 
 });
 
