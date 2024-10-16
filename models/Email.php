@@ -283,6 +283,7 @@
             $cuerpo = str_replace("xtipo", $datos[0]["tip_nom"], $cuerpo);
             $cuerpo = str_replace("xcant", $datos[0]["cant"], $cuerpo);
             $cuerpo = str_replace("xfechcrea", $datos[0]["fech_crea"], $cuerpo);
+            $cuerpo = str_replace("xfechterminado", $datos[0]["fech_terminado"], $cuerpo);
 
             $this->Body = $cuerpo;
             $this->AltBody = strip_tags("Respuesta Registro");
