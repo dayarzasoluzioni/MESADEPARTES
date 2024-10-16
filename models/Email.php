@@ -224,8 +224,10 @@
             $cuerpo = str_replace("xarea", $datos[0]["area_nom"], $cuerpo);
             $cuerpo = str_replace("xtramite", $datos[0]["tra_nom"], $cuerpo);
             $cuerpo = str_replace("xnroexterno", $datos[0]["doc_externo"], $cuerpo);
+            $cuerpo = str_replace("xnrofolios", $datos[0]["doc_folios"], $cuerpo);
             $cuerpo = str_replace("xtipo", $datos[0]["tip_nom"], $cuerpo);
             $cuerpo = str_replace("xcant", $datos[0]["cant"], $cuerpo);
+            $cuerpo = str_replace("xfechcrea", $datos[0]["fech_crea"], $cuerpo);
 
             $this->Body = $cuerpo;
             $this->AltBody = strip_tags("Enviar Registro");
@@ -277,8 +279,10 @@
             $cuerpo = str_replace("xarea", $datos[0]["area_nom"], $cuerpo);
             $cuerpo = str_replace("xtramite", $datos[0]["tra_nom"], $cuerpo);
             $cuerpo = str_replace("xnroexterno", $datos[0]["doc_externo"], $cuerpo);
+            $cuerpo = str_replace("xnrofolios", $datos[0]["doc_folios"], $cuerpo);
             $cuerpo = str_replace("xtipo", $datos[0]["tip_nom"], $cuerpo);
             $cuerpo = str_replace("xcant", $datos[0]["cant"], $cuerpo);
+            $cuerpo = str_replace("xfechcrea", $datos[0]["fech_crea"], $cuerpo);
 
             $this->Body = $cuerpo;
             $this->AltBody = strip_tags("Respuesta Registro");

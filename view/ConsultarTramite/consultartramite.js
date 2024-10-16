@@ -44,8 +44,9 @@ $(document).ready(function () {
         { "width": "1%", "targets": 4 },
         { "width": "1%", "targets": 5 },
         { "width": "10%", "targets": 6 },
-        { "width": "1%", "targets": 7, "className": "text-center"},
-        { "width": "1%", "targets": 8, "className": "text-center" },
+        { "width": "10%", "targets": 7 },
+        { "width": "1%", "targets": 8, "className": "text-center"},
+        { "width": "1%", "targets": 9, "className": "text-center" },
       ],
       "bInfo": true,
       "iDisplayLength": 10,
@@ -81,11 +82,12 @@ function ver(doc_id){
 
   $.post("../../controller/documento.php?op=mostrar", {doc_id: doc_id}, function(data){
 
-    data = JSON.parse(data);  
+    data = JSON.parse(data);
 
     $("#area_nom").val(data.area_nom);
     $("#tra_nom").val(data.tra_nom);
-    $("#doc_externo").val(data.doc_externo);    
+    $("#doc_externo").val(data.doc_externo);
+    $("#doc_folios").val(data.doc_folios);     
     $("#tip_nom").val(data.tip_nom);
     $("#doc_dni").val(data.doc_dni);
     $("#doc_nom").val(data.doc_nom);

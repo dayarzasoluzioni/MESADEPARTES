@@ -16,7 +16,7 @@
                         <input type="hidden" id="doc_id" name="doc_id">
 
                         <!-- <h5>Overflowing text to show scroll behavior</h5> -->
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             <div class="mb-3">
                                 <label for="form-label" class="form-label">Área</label>
                                 <input class="form-control" type="text" value="" id="area_nom" name="area_nom" readonly>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="mb-3">
                                 <label for="example-text-input" class="form-label">Trámite</label>
                                 <input class="form-control" type="text" value="" id="tra_nom" name="tra_nom" readonly>
@@ -36,6 +36,13 @@
                             <div class="mb-3">
                                 <label for="example-text-input" class="form-label">Nro. Documento</label>
                                 <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="mb-3">
+                                <label for="example-text-input" class="form-label">Nro. Folios</label>
+                                <input class="form-control" type="text" value="" id="doc_folios" name="doc_folios" readonly>
                             </div>
                         </div>
 

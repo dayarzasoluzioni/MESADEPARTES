@@ -65,6 +65,7 @@
                                                             <th>Area</th>
                                                             <th>Tramite</th>
                                                             <th>Doc. Externo</th>
+                                                            <th>Num. Folios</th>
                                                             <th>Tipo</th>
                                                             <th>Doc.</th>
                                                             <th>Nombre</th>

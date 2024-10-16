@@ -169,7 +169,8 @@ function ver(doc_id){
 
     $("#area_nom").val(data.area_nom);
     $("#tra_nom").val(data.tra_nom);
-    $("#doc_externo").val(data.doc_externo);  
+    $("#doc_externo").val(data.doc_externo);
+    $("#doc_folios").val(data.doc_folios);  
     $("#tip_nom").val(data.tip_nom);
     $("#doc_dni").val(data.doc_dni);
     $("#doc_nom").val(data.doc_nom);

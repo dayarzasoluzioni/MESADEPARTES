@@ -3,7 +3,7 @@
     class Documento extends Conectar{
 
         /* TODO: Método para registrar un nuevo usuario en la base de datos */
-        public function registrar_documento($area_id, $tra_id, $doc_externo, $tip_id, $doc_dni, $doc_nom, $doc_descrip, $usu_id){
+        public function registrar_documento($area_id, $tra_id, $doc_externo, $doc_folios, $tip_id, $doc_dni, $doc_nom, $doc_descrip, $usu_id){
 
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
             $conectar = parent::conexion();
@@ -11,9 +11,9 @@
             parent::set_names();
             /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_documento */
             $sql="INSERT INTO tm_documento 
-                (area_id, tra_id, doc_externo, tip_id, doc_dni, doc_nom, doc_descrip, usu_id) 
+                (area_id, tra_id, doc_externo, doc_folios, tip_id, doc_dni, doc_nom, doc_descrip, usu_id) 
                 VALUES 
-                (?,?,?,?,?,?,?,?)";
+                (?,?,?,?,?,?,?,?,?)";
 
             /* TODO: Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);
@@ -21,11 +21,12 @@
             $sql->bindValue(1,$area_id);
             $sql->bindValue(2,$tra_id);
             $sql->bindValue(3,$doc_externo);
-            $sql->bindValue(4,$tip_id);
-            $sql->bindValue(5,$doc_dni);
-            $sql->bindValue(6,$doc_nom);
-            $sql->bindValue(7,$doc_descrip);
-            $sql->bindValue(8,$usu_id);
+            $sql->bindValue(4,$doc_folios);
+            $sql->bindValue(5,$tip_id);
+            $sql->bindValue(6,$doc_dni);
+            $sql->bindValue(7,$doc_nom);
+            $sql->bindValue(8,$doc_descrip);
+            $sql->bindValue(9,$usu_id);
 
             /* TODO: Ejecutar la consulta SQL */
             $sql->execute();
@@ -116,6 +117,7 @@
                 tm_area.area_nom,
                 tm_area.area_correo,
                 tm_documento.doc_externo,
+                tm_documento.doc_folios,
                 tm_documento.doc_dni,
                 tm_documento.doc_nom,
                 tm_documento.doc_descrip,
@@ -221,6 +223,7 @@
                 tm_area.area_nom,
                 tm_area.area_correo,
                 tm_documento.doc_externo,
+                tm_documento.doc_folios,
                 tm_documento.doc_dni,
                 tm_documento.doc_nom,
                 tm_documento.doc_descrip,

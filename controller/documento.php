@@ -18,6 +18,7 @@
                 $_POST["area_id"],
                 $_POST["tra_id"],
                 $_POST["doc_externo"],
+                $_POST["doc_folios"],
                 $_POST["tip_id"],
                 $_POST["doc_dni"],
                 $_POST["doc_nom"],
@@ -72,6 +73,7 @@
                 $sub_array[] = $row["area_nom"];
                 $sub_array[] = $row["tra_nom"];
                 $sub_array[] = $row["doc_externo"];
+                $sub_array[] = $row["doc_folios"];
                 $sub_array[] = $row["tip_nom"];
                 $sub_array[] = $row["doc_dni"];
                 $sub_array[] = $row["doc_nom"];
@@ -150,13 +152,16 @@
 
             if(is_array($datos) == true and count($datos) > 0){
 
-                foreach($datos as $row){
+                //foreach($datos as $row){
+
+                    $row = $datos[0];
 
                     $output["doc_id"] = $row["doc_id"];
                     $output["area_id"] = $row["area_id"];
                     $output["area_nom"] = $row["area_nom"];
                     $output["area_correo"] = $row["area_correo"];
                     $output["doc_externo"] = $row["doc_externo"];
+                    $output["doc_folios"] = $row["doc_folios"];
                     $output["doc_dni"] = $row["doc_dni"];
                     $output["doc_nom"] = $row["doc_nom"];
                     $output["doc_descrip"] = $row["doc_descrip"];
@@ -174,7 +179,7 @@
                     $output["fech_crea"] = $row["fech_crea"];
                     $output["fech_terminado"] = $row["fech_terminado"];
 
-                }
+                //}
 
                 echo json_encode($output);
 

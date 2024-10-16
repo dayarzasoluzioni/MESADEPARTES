@@ -60,7 +60,7 @@
                                             <form method="post" id="documento_form">
                                                 <div class="row">                                                
 
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-2">
                                                         <div class="mb-3">
                                                             <label for="form-label" class="form-label">Área (*)</label>
                                                             <select class="form-select" name="area_id" id="area_id" placeholder="Seleccione el área" required>
@@ -69,7 +69,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-4">
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">Trámite (*)</label>
                                                             <select class="form-select" name="tra_id" id="tra_id" placeholder="Seleccione el trámite" required>
@@ -82,6 +82,13 @@
                                                         <div class="mb-3">
                                                             <label for="example-text-input" class="form-label">Nro. Documento</label>
                                                             <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" placeholder="Ingrese el número de documento">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <div class="mb-3">
+                                                            <label for="example-text-input" class="form-label">Nro. Folios (*)</label>
+                                                            <input class="form-control" type="text" min="0" value="" id="doc_folios" name="doc_folios" placeholder="Ingrese el número de folios" required>
                                                         </div>
                                                     </div>
 
@@ -205,6 +212,13 @@
 
             //TODO: Prevenir la entrada de cualquier caracter que no sea un número
             document.getElementById('doc_dni').addEventListener('keypress', function(event) {
+                if (!/^\d$/.test(event.key)) {
+                    event.preventDefault(); //TODO: Evitar la entrada si no es un número
+                }
+            });
+
+            //TODO: Prevenir la entrada de cualquier caracter que no sea un número
+            document.getElementById('doc_folios').addEventListener('keypress', function(event) {
                 if (!/^\d$/.test(event.key)) {
                     event.preventDefault(); //TODO: Evitar la entrada si no es un número
                 }
