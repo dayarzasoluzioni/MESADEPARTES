@@ -34,7 +34,7 @@
 
                     <div class="col-lg-3">
                         <div class="mb-3">
-                            <label for="example-text-input" class="form-label">Nro. Externo</label>
+                            <label for="example-text-input" class="form-label">Nro. Documento</label>
                             <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" readonly>
                         </div>
                     </div>

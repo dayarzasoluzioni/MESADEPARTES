@@ -80,8 +80,8 @@
 
                                                     <div class="col-lg-3">
                                                         <div class="mb-3">
-                                                            <label for="example-text-input" class="form-label">Nro. Externo</label>
-                                                            <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" placeholder="Ingrese el número externo">
+                                                            <label for="example-text-input" class="form-label">Nro. Documento</label>
+                                                            <input class="form-control" type="text" value="" id="doc_externo" name="doc_externo" placeholder="Ingrese el número de documento">
                                                         </div>
                                                     </div>
 
@@ -97,7 +97,7 @@
                                                     <div class="col-lg-3">
                                                         <div class="mb-3">
                                                             <label for="doc_dni" class="form-label">DNI / RUC (*)</label>
-                                                            <input class="form-control" type="text" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento" required>
+                                                            <input class="form-control" type="text" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento de identidad" required>
                                                             <small id="dniError" style="color: red; display: none;">El número de documento debe tener al menos 8 dígitos y contener solo números.</small>
                                                         </div>
                                                     </div>
