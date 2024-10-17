@@ -101,18 +101,25 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-lg-3">
+                                                    <div class="col-lg-2">
                                                         <div class="mb-3">
                                                             <label for="doc_dni" class="form-label">DNI / RUC (*)</label>
-                                                            <input class="form-control" type="text" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento de identidad" required>
+                                                            <input class="form-control" maxlength="11" type="text" id="doc_dni" name="doc_dni" placeholder="Ingrese el número de documento de identidad" required>
                                                             <small id="dniError" style="color: red; display: none;">El número de documento debe tener al menos 8 dígitos y contener solo números.</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-1">
+                                                        <div class="mb-3">
+                                                        <label for="doc_dni" class="form-label">Conectar</label>
+                                                        <button type="button" id="verificar" class="btn btn-primary waves-effect waves-light">Validar Doc.</button>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
-                                                            <label for="example-text-input" class="form-label">Nombre / Razón Social (*)</label>
-                                                            <input class="form-control" type="text" value="" id="doc_nom" name="doc_nom" placeholder="Ingrese el nombre o razón social" required>
+                                                            <label for="doc_nom" class="form-label">Nombres / Razón Social (*)</label>
+                                                            <input class="form-control" type="text" value="" id="doc_nom" name="doc_nom" readonly>
                                                         </div>
                                                     </div>
 
@@ -222,6 +229,40 @@
                 if (!/^\d$/.test(event.key)) {
                     event.preventDefault(); //TODO: Evitar la entrada si no es un número
                 }
+            });
+
+            // JavaScript para enviar el formulario al archivo verificar_documento.php
+            $('#verificar').on('click', function() {
+                var documento = $('#doc_dni').val();
+
+                // Validar si es DNI o RUC en base a la longitud del número ingresado
+                if (documento.length === 8) {
+                    var tipo = 'dni';
+                } else if (documento.length === 11) {
+                    var tipo = 'ruc';
+                } else {
+                    $('#doc_nom').val('Ingrese un DNI (8 dígitos) o RUC (11 dígitos) válido.');
+                    return;
+                }
+
+                $.ajax({
+                    url: 'verificar_documento.php',  // Archivo PHP que maneja la verificación
+                    type: 'POST',
+                    data: { documento: documento, tipo: tipo },
+                    success: function(response) {
+                        var resultado = JSON.parse(response);
+
+                        if (resultado.success) {
+                            // Mostrar el nombre y apellidos concatenados en el input 'doc_nom'
+                            $('#doc_nom').val(resultado.nombre_completo);
+                        } else {
+                            $('#doc_nom').val('No se encontró información.');
+                        }
+                    },
+                    error: function() {
+                        $('#doc_nom').val('Hubo un error al procesar la solicitud.');
+                    }
+                });
             });
         </script>
 
