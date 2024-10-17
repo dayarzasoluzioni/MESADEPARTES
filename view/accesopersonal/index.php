@@ -154,12 +154,12 @@
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 pt-2 text-center">
+                                        <!-- <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
 
-                                            <ul class="list-inline mb-0">
+                                            <ul class="list-inline mb-0"> -->
                                                 <!-- <li class="list-inline-item">
                                                     <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
                                                         <i class="mdi mdi-facebook"></i>
@@ -170,24 +170,24 @@
                                                         <i class="mdi mdi-twitter"></i>
                                                     </a>
                                                 </li> -->
-                                                <li class="list-inline-item">
+                                                <!-- <li class="list-inline-item"> -->
 
                                                     <!-- <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
                                                         <i class="mdi mdi-google"></i>
                                                     </a> -->
 
                                                     <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
-                                                    <div id="g_id_onload"
+                                                    <!-- <div id="g_id_onload"
                                                         data-client_id = "995852774376-e1p01bkbqmqho6t3a7d456ou3ofnuak0.apps.googleusercontent.com"
                                                         data-context = "signin"
                                                         data-ux_mode = "popup"
                                                         data-callback = "handleCredentialResponse"
                                                         data-auto_promp = "false"
                                                     >
-                                                    </div>
+                                                    </div> -->
 
                                                     <!--TODO: Congiguración del btón de inicio de sesión con Google -->
-                                                    <div class = "g_id_signin"
+                                                    <!-- <div class = "g_id_signin"
                                                         data-type = "standard"
                                                         data-shape = "rectangular"
                                                         data-theme = "outline"
@@ -199,7 +199,7 @@
 
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
 
                                         <div class="mt-5 text-center">
                                             <p class="text-muted mb-0">¿No eres colaborador? - <a href="../../index.php" class="text-primary fw-semibold"> Accede como Usuario </a> </p>
