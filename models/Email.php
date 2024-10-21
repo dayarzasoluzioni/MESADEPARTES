@@ -31,10 +31,10 @@
             $this->IsSMTP();
             $this->Host = 'mail.soluzioni.com.pe';
 
-            // Usa el puerto correcto para SSL
-            $this->Port = 465; // Puerto SSL
+            //TODO: Usa el puerto correcto para SSL
+            $this->Port = 465; //TODO: Puerto SSL
             $this->SMTPAuth = true;
-            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+            $this->SMTPSecure = 'ssl'; //TODO: Conexión SSL/TLS desde el inicio
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
@@ -77,10 +77,10 @@
             $this->IsSMTP();
             $this->Host = 'mail.soluzioni.com.pe';
 
-            // Usa el puerto correcto para SSL
-            $this->Port = 465; // Puerto SSL
+            //TODO: Usa el puerto correcto para SSL
+            $this->Port = 465; //TODO: Puerto SSL
             $this->SMTPAuth = true;
-            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+            $this->SMTPSecure = 'ssl'; //TODO: Conexión SSL/TLS desde el inicio
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
@@ -137,10 +137,10 @@
             $this->IsSMTP();
             $this->Host = 'mail.soluzioni.com.pe';
 
-            // Usa el puerto correcto para SSL
-            $this->Port = 465; // Puerto SSL
+            //TODO: Usa el puerto correcto para SSL
+            $this->Port = 465; //TODO: Puerto SSL
             $this->SMTPAuth = true;
-            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+            $this->SMTPSecure = 'ssl'; //TODO: Conexión SSL/TLS desde el inicio
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
@@ -199,10 +199,10 @@
             $this->IsSMTP();
             $this->Host = 'mail.soluzioni.com.pe';
 
-            // Usa el puerto correcto para SSL
-            $this->Port = 465; // Puerto SSL
+            //TODO: Usa el puerto correcto para SSL
+            $this->Port = 465; //TODO: Puerto SSL
             $this->SMTPAuth = true;
-            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+            $this->SMTPSecure = 'ssl'; //TODO: Conexión SSL/TLS desde el inicio
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
@@ -255,10 +255,10 @@
             $this->IsSMTP();
             $this->Host = 'mail.soluzioni.com.pe';
 
-            // Usa el puerto correcto para SSL
-            $this->Port = 465; // Puerto SSL
+            //TODO: Usa el puerto correcto para SSL
+            $this->Port = 465; //TODO: Puerto SSL
             $this->SMTPAuth = true;
-            $this->SMTPSecure = 'ssl'; // Conexión SSL/TLS desde el inicio
+            $this->SMTPSecure = 'ssl'; //TODO: Conexión SSL/TLS desde el inicio
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
