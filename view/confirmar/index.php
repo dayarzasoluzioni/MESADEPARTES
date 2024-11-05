@@ -47,7 +47,7 @@
                                                 <h4>Gracias por Confirmar !</h4>
                                                 <p class="text-muted">Su cuenta ha sido validada, ya puede ingresar al sistema de Mesa de Partes.</p>
                                                 <div class="mt-4">
-                                                    <a href="../../index.php" class="btn btn-primary w-100">Regresar al Login</a>
+                                                    <a href="../../index.php" style="background-color: #d63838" class="btn btn-primary w-100">Regresar al Login</a>
                                                 </div>
                                             </div>
                                         </div>

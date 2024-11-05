@@ -57,7 +57,7 @@
 
                                         <div class="card-body">
 
-                                            <button type="button" id="btnnuevo" class="btn btn-primary waves-effect waves-light">Nuevo Tipo</button>
+                                            <button type="button" id="btnnuevo" class="btn btn-primary waves-effect waves-light">Nuevo Rol</button>
                                             <br>
                                             <br>
 

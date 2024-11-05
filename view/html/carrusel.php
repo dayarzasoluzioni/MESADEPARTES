@@ -73,8 +73,7 @@
                                 <div class="testi-contain text-white">
                                     <i class="bx bxs-quote-alt-left text-white display-6"></i>
 
-                                    <h4 class="mt-4 fw-medium lh-base text-white">“Su personal siempre está dispuesto
-                                        a apoyarnos.”</h4>
+                                    <h4 class="mt-4 fw-medium lh-base text-white">“Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.”</h4>
                                     <div class="mt-4 pt-3 pb-5">
                                         <div class="d-flex align-items-start">
                                             <img src="../../assets/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">

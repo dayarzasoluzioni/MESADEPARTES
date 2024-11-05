@@ -25,10 +25,12 @@ if (isset($_POST['documento']) && isset($_POST['tipo'])) {
     if ($tipo == 'dni' && isset($data['nombres']) && isset($data['apellidoPaterno']) && isset($data['apellidoMaterno'])) {
         //TODO: Concatenar nombres y apellidos
         $nombreCompleto = $data['nombres'] . ' ' . $data['apellidoPaterno'] . ' ' . $data['apellidoMaterno'];
-        echo json_encode(['success' => true, 'nombre_completo' => $nombreCompleto]);
+        //TODO: En Network se podrá visualizar la data completa del dni consultado
+        echo json_encode(['success' => true, 'nombre_completo' => $nombreCompleto, 'data_completa' => $data]);
     } else if ($tipo == 'ruc' && isset($data['razonSocial'])) {
         //TODO: En el caso de RUC, se toma el nombre (razón social)
-        echo json_encode(['success' => true, 'nombre_completo' => $data['razonSocial']]);
+        //TODO: En Network se podrá visualizar la data completa del ruc consultado
+        echo json_encode(['success' => true, 'nombre_completo' => $data['razonSocial'], 'data_completa' => $data]);
     } else {
         //TODO: Mostrar la respuesta cruda de la API para analizarla
         echo json_encode([
