@@ -13,7 +13,7 @@
 
     <head>
         
-        <title>Cambio de Contraseña | Soluzioni Capital - Mesa de Partes</title>
+        <title>Cambio de Contraseña | Soluzioni Group - Mesa de Partes</title>
         <?php require_once("../html/head.php") ?>
         
     </head>

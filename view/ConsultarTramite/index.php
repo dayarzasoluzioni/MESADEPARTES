@@ -13,7 +13,7 @@
 
     <head>
         
-        <title>Consultar Trámite | Soluzioni Capital - Mesa de Partes</title>
+        <title>Consultar Trámite | Soluzioni Group - Mesa de Partes</title>
         <?php require_once("../html/head.php") ?>
         
     </head>

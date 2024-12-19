@@ -13,7 +13,7 @@
 
     <head>
         
-        <title>Página de Inicio - Colaborador | Soluzioni Capital - Mesa de Partes</title>
+        <title>Página de Inicio - Colaborador | Soluzioni Group - Mesa de Partes</title>
         <?php require_once("../html/head.php") ?>
         
     </head>

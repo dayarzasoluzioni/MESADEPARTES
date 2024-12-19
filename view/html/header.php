@@ -8,7 +8,7 @@
                         <img src="../../assets/image/soluzionilogo.png" alt="" height="24">
                     </span>
                     <span class="logo-lg">
-                        <img src="../../assets/image/soluzionilogo.png" alt="" height="24"> <span class="logo-txt">Soluzioni Capital</span>
+                        <img src="../../assets/image/soluzionilogo.png" alt="" height="24"> <span class="logo-txt">Soluzioni Group</span>
                     </span>
                 </a>
                 <a class="logo logo-light">
@@ -16,7 +16,7 @@
                         <img src="../../assets/image/soluzionilogo.png" alt="" height="24">
                     </span>
                     <span class="logo-lg">
-                        <img src="../../assets/image/soluzionilogo.png" alt="" height="24"> <span class="logo-txt">Soluzioni Capital</span>
+                        <img src="../../assets/image/soluzionilogo.png" alt="" height="24"> <span class="logo-txt">Soluzioni Group</span>
                     </span>
                 </a>
             </div>

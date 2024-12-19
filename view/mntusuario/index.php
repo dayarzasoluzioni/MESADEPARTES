@@ -13,7 +13,7 @@
 
     <head>
         
-        <title>Mnt. Colaborador | Soluzioni Capital - Mesa de Partes</title>
+        <title>Mnt. Colaborador | Soluzioni Group - Mesa de Partes</title>
         <?php require_once("../html/head.php") ?>
         
     </head>

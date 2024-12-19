@@ -38,7 +38,7 @@
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
-            $this->setFrom($this->gCorreo,"Registro en Mesa de Partes Soluzioni Capital");
+            $this->setFrom($this->gCorreo,"Registro en Mesa de Partes Soluzioni Group");
 
             $this->CharSet = 'UTF8';
             /* $this->addAddress($usu_correo); */
@@ -84,7 +84,7 @@
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
-            $this->setFrom($this->gCorreo,"Recuperar Contraseña en Mesa de Partes Soluzioni Capital");
+            $this->setFrom($this->gCorreo,"Recuperar Contraseña en Mesa de Partes Soluzioni Group");
 
             $this->CharSet = 'UTF8';
             /* $this->addAddress($usu_correo); */
@@ -206,7 +206,7 @@
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
-            $this->setFrom($this->gCorreo,"Nuevo Trámite Registrado en Mesa de Partes Soluzioni Capital");
+            $this->setFrom($this->gCorreo,"Nuevo Trámite Registrado en Mesa de Partes Soluzioni Group");
 
             $this->CharSet = 'UTF8';
             /* $this->addAddress($usu_correo); */
@@ -262,7 +262,7 @@
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
-            $this->setFrom($this->gCorreo,"Trámite Respondido en Mesa de Partes Soluzioni Capital");
+            $this->setFrom($this->gCorreo,"Trámite Respondido en Mesa de Partes Soluzioni Group");
 
             $this->CharSet = 'UTF8';
             /* $this->addAddress($usu_correo); */

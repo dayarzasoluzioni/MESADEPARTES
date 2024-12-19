@@ -13,7 +13,7 @@
 
     <head>
         
-        <title>Gestionar Trámite - Colaborador | Soluzioni Capital - Mesa de Partes</title>
+        <title>Gestionar Trámite - Colaborador | Soluzioni Group - Mesa de Partes</title>
         <?php require_once("../html/head.php") ?>
         
     </head>
